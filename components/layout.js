@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import Navbar from './navbar';
 
 const name = 'Tanner Tran';
 export const siteTitle = 'Tanner Tran';
@@ -58,6 +59,7 @@ export default function Layout({ children, home }) {
                     </>
                 )}
             </header>
+            <Navbar />
             <main>{children}</main>
             {!home && (
                 <div className={styles.backToHome}>
