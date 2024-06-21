@@ -10,7 +10,7 @@ export const siteTitle = 'Tanner Tran';
 
 export default function Layout({ children, home }) {
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
@@ -26,6 +26,8 @@ export default function Layout({ children, home }) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
+            <Navbar />
+        <div className={styles.container}>
             <header className={styles.header}>
                 {home ? (
                     <>
@@ -59,13 +61,14 @@ export default function Layout({ children, home }) {
                     </>
                 )}
             </header>
-            <Navbar />
+            {/* <Navbar /> */}
             <main>{children}</main>
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/">← Back to home</Link>
                 </div>
             )}
+        </div>
         </div>
     );
 }
