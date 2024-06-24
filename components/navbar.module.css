@@ -1,18 +1,22 @@
 /* navbar.module.css */
 .navcontainer {
     top: 0;
-    padding: 3vh 15vh 1vh 15vh;
+    /* padding: 3vh 15vh 1vh 15vh; */
+    /* padding-bottom: 1vh; */
+    border-bottom: solid;
+    border-color: #354F52;
     position: fixed;
     width: 100vw;
 }
 
 .navbar {
     top: 0;
-    background-color: #CAD2C5;
+    /* background-color: #CAD2C5; */
     display: flex;
     justify-content: space-between;
     z-index: 1000;
     align-items: center;
+    /* border-radius: 10px; */
 }
 
 .name {
