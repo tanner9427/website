@@ -42,7 +42,8 @@ export default function Layout({ children, home }) {
                             /> */}
                             {/* <h1 className={utilStyles.heading2Xl}>{name}</h1> */}
                             <div className={styles.autotype}>
-                                <h2>Hi, my name is Tanner, I'm a
+                                <h1>Hi!</h1>
+                                <h2>My name is Tanner, I'm a
                                     <span className={styles.autotypeEffect}>
                                         <ReactTypingEffect
                                             text={["Designer", "Developer", "Climber"]}
@@ -52,6 +53,7 @@ export default function Layout({ children, home }) {
                                         />
                                     </span>
                                 </h2>
+                                <h2>Computer science student currently based in Sacramento and studying at Cal Poly, SLO.</h2>
                             </div>
                         </>
                     ) : (
