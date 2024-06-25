@@ -5,6 +5,7 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Navbar from './navbar';
 import ReactTypingEffect from 'react-typing-effect';
+import Work from './work';
 
 const name = 'Tanner Tran';
 export const siteTitle = 'Tanner Tran';
@@ -76,6 +77,7 @@ export default function Layout({ children, home }) {
                         </>
                     )}
                 </header>
+                {home && <Work />}
                 {/* <Navbar /> */}
                 <main>{children}</main>
                 {!home && (
