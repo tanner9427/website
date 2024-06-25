@@ -16,8 +16,8 @@ export default function Layout({ children, home }) {
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
-                    name="description"
-                    content="Learn how to build a personal website using Next.js"
+                    name="Tanner Tran Website"
+                    content="Tanner Tran's Personal Website"
                 />
                 <meta
                     property="og:image"
@@ -59,7 +59,7 @@ export default function Layout({ children, home }) {
                         </>
                     ) : (
                         <>
-                            <Link href="/">
+                            {/* <Link href="/">
                                 <Image
                                     priority
                                     src="/images/profile2.jpg"
@@ -68,7 +68,7 @@ export default function Layout({ children, home }) {
                                     width={108}
                                     alt=""
                                 />
-                            </Link>
+                            </Link> */}
                             <h2 className={utilStyles.headingLg}>
                                 <Link href="/" className={utilStyles.colorInherit}>
                                     {name}
@@ -77,8 +77,9 @@ export default function Layout({ children, home }) {
                         </>
                     )}
                 </header>
+                <div className = {styles.mywork}>
                 {home && <Work />}
-                {/* <Navbar /> */}
+                </div>
                 <main>{children}</main>
                 {!home && (
                     <div className={styles.backToHome}>
