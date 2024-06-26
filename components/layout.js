@@ -47,7 +47,7 @@ export default function Layout({ children, home }) {
                                 <h2>My name is Tanner, I'm a
                                     <span className={styles.autotypeEffect}>
                                         <ReactTypingEffect
-                                            text={["Designer", "Developer", "Climber"]}
+                                            text={["Designer", "Developer", "Dreamer"]}
                                             speed={80}
                                             eraseDelay={2000}
                                             eraseSpeed={90}
@@ -77,8 +77,8 @@ export default function Layout({ children, home }) {
                         </>
                     )}
                 </header>
-                <div className = {styles.mywork}>
-                {home && <Work />}
+                <div className={styles.mywork}>
+                    {home && <Work />}
                 </div>
                 <main>{children}</main>
                 {!home && (
