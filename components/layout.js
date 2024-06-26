@@ -30,53 +30,56 @@ export default function Layout({ children, home }) {
             </Head>
             <Navbar />
             <div className={styles.container}>
-                <header className={styles.header}>
-                    {home ? (
-                        <>
-                            {/* <Image
-                                priority
-                                src="/images/profile2.jpg"
-                                className={utilStyles.borderCircle}
-                                height={144}
-                                width={144}
-                                alt=""
-                            /> */}
-                            {/* <h1 className={utilStyles.heading2Xl}>{name}</h1> */}
-                            <div className={styles.autotype}>
-                                <h1>Hi!</h1>
-                                <h2>My name is Tanner, I'm a
-                                    <span className={styles.autotypeEffect}>
-                                        <ReactTypingEffect
-                                            text={["Designer", "Developer", "Dreamer"]}
-                                            speed={80}
-                                            eraseDelay={2000}
-                                            eraseSpeed={90}
-                                        />
-                                    </span>
-                                </h2>
-                                <h2>Computer science student currently based in Sacramento and studying at Cal Poly, SLO.</h2>
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            {/* <Link href="/">
-                                <Image
+                <div className={styles.headerContainer}>
+                    <header className={styles.header}>
+                        {home ? (
+                            <>
+                                {/* <Image
                                     priority
                                     src="/images/profile2.jpg"
                                     className={utilStyles.borderCircle}
-                                    height={108}
-                                    width={108}
+                                    height={144}
+                                    width={144}
                                     alt=""
-                                />
-                            </Link> */}
-                            <h2 className={utilStyles.headingLg}>
-                                <Link href="/" className={utilStyles.colorInherit}>
-                                    {name}
-                                </Link>
-                            </h2>
-                        </>
-                    )}
-                </header>
+                                /> */}
+                                {/* <h1 className={utilStyles.heading2Xl}>{name}</h1> */}
+                                <div className={styles.autotype}>
+                                    <h1>Hi!</h1>
+                                    <h1>My name is Tanner, I'm a
+                                        <span className={styles.autotypeEffect}>
+                                            <ReactTypingEffect
+                                                text={["Designer.", "Developer.", "Dreamer."]}
+                                                speed={80}
+                                                eraseDelay={2000}
+                                                eraseSpeed={90}
+                                            />
+                                        </span>
+                                    </h1>
+                                    <h2>Computer science student currently based in Sacramento and studying at Cal Poly, SLO.</h2>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                {/* <Link href="/">
+                                    <Image
+                                        priority
+                                        src="/images/profile2.jpg"
+                                        className={utilStyles.borderCircle}
+                                        height={108}
+                                        width={108}
+                                        alt=""
+                                    />
+                                </Link> */}
+                                <h2 className={utilStyles.headingLg}>
+                                    <Link href="/" className={utilStyles.colorInherit}>
+                                        {name}
+                                    </Link>
+                                </h2>
+                            </>
+                        )}
+                    </header>
+                </div>
+                {/* <hr className={styles.horizontalLine}/> */}
                 <div className={styles.mywork}>
                     {home && <Work />}
                 </div>

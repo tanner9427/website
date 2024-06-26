@@ -23,6 +23,7 @@
     width: 100%;
     height: 100%;
     border: var(--border);
+    border-radius: 11px;
 }
 
 .projectItem img {
@@ -31,6 +32,6 @@
     border-color: #2F3E46;
 }
 
-.projectItem img:hover {
+/* .projectItem img:hover {
     transform: scale(0.95);
-}
+} */

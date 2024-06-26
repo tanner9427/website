@@ -1,7 +1,12 @@
 .container {
     /* max-width: 36rem; */
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
     /* margin: 3rem 1rem 2rem 6rem; */
+    /* padding-top: 4rem; */
+}
+
+.headerContainer {
+    background-color: #52796F;
     padding-top: 4rem;
 }
 
@@ -10,7 +15,8 @@
     flex-direction: column;
     align-items: flex-start;
     margin: 3rem 1rem 2rem 6rem;
-    max-width: 36rem;
+    max-width: 40rem;
+    height:100vh;
 }
 
 .backToHome {
@@ -19,14 +25,31 @@
 
 .autotype {
     font-size: 1.2rem;
-    color: #354F52;
+    color: #84A98C;
+}
+
+.autotype h1{
+    font-weight: 1000;
+    margin-bottom: -30px;
+}
+
+.autotype h2 {
+    font-weight: 500;
+    margin-top: 50px;
 }
 
 .autotypeEffect {
     display: inline-block;
     margin-left: 8px;
     font-style: italic;
-    color: #2F3E46;
+    color: #84A98C;
+}
+
+.horizontalLine {
+    border:none;
+    border-top: 2px solid #000;
+    margin: 20px 0;
+    width: 100%;
 }
 
 .mywork {

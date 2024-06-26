@@ -5,7 +5,10 @@ export default function Navbar() {
     return (
         <div className={styles.navcontainer}>
             <div className={styles.navbar}>
+                <div className = {styles.logoName}>
+                <img src="/images/Tanner Tran Logo.png" alt="Logo" className={styles.logo}></img>
                 <a className={styles.name}>Tanner Tran</a>
+                </div>
                 <ul className={styles.items}>
                     <li className={styles.item}>
                         <Link href="work">

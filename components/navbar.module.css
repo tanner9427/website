@@ -7,8 +7,6 @@
     border-color: #354F52;
     position: fixed;
     width: 100vw;
-    padding-left: 3vh;
-    padding-right: 3vh;
 }
 
 .navbar {
@@ -18,7 +16,18 @@
     justify-content: space-between;
     z-index: 1000;
     align-items: center;
+    padding-left: 3vh;
+    padding-right: 3vh;
     /* border-radius: 10px; */
+}
+
+.logoName {
+    display: flex;
+    align-items: center;
+}
+
+.logoName img {
+    width:56px;
 }
 
 .name {

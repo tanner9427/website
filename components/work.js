@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/layout';
 import styles from './work.module.css';
+import Link from 'next/link';
 
 export default function Work() {
     return (
@@ -15,10 +16,12 @@ export default function Work() {
                             <h2>Leasify</h2>
                             <p>Software project done for software class yuh.</p>
                             <div className={styles.projectItemBox}>
+                            <Link href="/projects/leasify" passHref>
                                 <img src="/images/Landing Page 1.png" alt="Leasify" className={styles.projectImage} />
                                 {/* <div className={styles.projectInfo}>
                                 <a href="https://example.com" target="_blank" className={styles.projectLink}>View Project</a>
                                 </div> */}
+                                </Link>
                             </div>
                         </div>
 
