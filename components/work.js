@@ -9,7 +9,7 @@ export default function Work() {
             <Head>
                 <title>Tanner Tran</title>
             </Head>
-            <section className={styles.mywork}>
+            <section id="myWork" className={styles.mywork}>
                 <h1>MY WORK</h1>
                 <div className={styles.projectList}>
                         <div className={styles.projectItem}>

@@ -14,7 +14,7 @@ export default function Layout({ children, home }) {
     return (
         <div>
             <Head>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/images/favicon.png" />
                 <meta
                     name="Tanner Tran Website"
                     content="Tanner Tran's Personal Website"
@@ -28,7 +28,7 @@ export default function Layout({ children, home }) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className={styles.container}>
                 <div className={styles.headerContainer}>
                     <header className={styles.header}>
@@ -90,6 +90,7 @@ export default function Layout({ children, home }) {
                     </div>
                 )}
             </div>
+            <Navbar />
         </div>
     );
 }
