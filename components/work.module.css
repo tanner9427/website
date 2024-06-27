@@ -2,6 +2,14 @@
     color: black;
 }
 
+.headerBox {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align:center;
+}
+
 .h1 {
     color: black;
 }

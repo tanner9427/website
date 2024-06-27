@@ -10,7 +10,10 @@ export default function Work() {
                 <title>Tanner Tran</title>
             </Head>
             <section id="myWork" className={styles.mywork}>
-                <h1>MY WORK</h1>
+                <div className={styles.headerBox}>
+                <h1>Some of my past works</h1>
+                </div>
+                
                 <div className={styles.projectList}>
                         <div className={styles.projectItem}>
                             <h2>Leasify</h2>
