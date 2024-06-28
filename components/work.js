@@ -11,13 +11,17 @@ export default function Work() {
             </Head>
             <section id="myWork" className={styles.mywork}>
                 <div className={styles.headerBox}>
-                <h1>Some of my past works</h1>
+                <h1>SOME OF MY PAST WORKS</h1>
                 </div>
-                
+
                 <div className={styles.projectList}>
                         <div className={styles.projectItem}>
-                            <h2>Leasify</h2>
-                            <p>Software project done for software class yuh.</p>
+                            {/* <h2>Leasify</h2>
+                            <p>Software project done for software class yuh.</p> */}
+                            <div className = {styles.projectDescription}>
+                                <h2>project</h2>
+                                <p>description</p>
+                            </div>
                             <div className={styles.projectItemBox}>
                             <Link href="/projects/leasify" passHref>
                                 <img src="/images/Landing Page 1.png" alt="Leasify" className={styles.projectImage} />
@@ -26,6 +30,7 @@ export default function Work() {
                                 </div> */}
                                 </Link>
                             </div>
+                            
                         </div>
 
 
