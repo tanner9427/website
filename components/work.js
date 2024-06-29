@@ -18,9 +18,13 @@ export default function Work() {
                         <div className={styles.projectItem}>
                             {/* <h2>Leasify</h2>
                             <p>Software project done for software class yuh.</p> */}
-                            <div className = {styles.projectDescription}>
-                                <h2>project</h2>
-                                <p>description</p>
+                            <div className= {styles.descriptionBox}>
+                                <div className = {styles.projectDescription}>
+                                    <h1 className = {styles.textHead}>LEASIFY</h1>
+                                    <div className = {styles.textAbout}>Subleasing application for Cal Poly students</div>
+                                    <div className = {styles.textDescription}>Designed and blah</div>
+                                    <a href="" className = {styles.readMore}>Read More</a>
+                                </div>
                             </div>
                             <div className={styles.projectItemBox}>
                             <Link href="/projects/leasify" passHref>
