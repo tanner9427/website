@@ -36,10 +36,11 @@
 
 .projectItem {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    /* padding: 20px; */
     border: 1px solid black;
 }
 
@@ -54,6 +55,7 @@
 .descriptionBox {
     flex: 1;
     text-align: center;
+    width:100%;
 }
 
 .projectDescription {
@@ -74,7 +76,9 @@
 
 .textAbout {}
 
-.textDescription {}
+.textDescription {
+    margin-bottom: 20px;
+}
 
 .readMore {
     margin-top: 20px;
@@ -86,7 +90,7 @@
 }
 
 .readMore:hover {
-    color: white;
+    color: #CAD2C5;
     outline: 0;
     background-color: #2F3E46;
 }
