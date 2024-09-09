@@ -10,7 +10,7 @@ import Work from './work';
 const name = 'Tanner Tran';
 export const siteTitle = 'Tanner Tran';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, showHeader = true, showNavbar = true }) {
     return (
         <div>
             <Head>
@@ -30,6 +30,7 @@ export default function Layout({ children, home }) {
             </Head>
             {/* <Navbar /> */}
             <div className={styles.container}>
+                {showHeader && (
                 <div className={styles.headerContainer}>
                     <header className={styles.header}>
                         {home ? (
@@ -48,7 +49,7 @@ export default function Layout({ children, home }) {
                                     <h1>My name is Tanner, I'm a
                                         <span className={styles.autotypeEffect}>
                                             <ReactTypingEffect
-                                                text={["Designer.", "Developer.", "Dreamer."]}
+                                                text={["UI Designer.", "Developer.", "UX Designer."]}
                                                 speed={80}
                                                 eraseDelay={2000}
                                                 eraseSpeed={90}
@@ -79,10 +80,12 @@ export default function Layout({ children, home }) {
                         )}
                     </header>
                 </div>
+                )}
                 {/* <hr className={styles.horizontalLine}/> */}
                 <div className={styles.mywork}>
                     {home && <Work />}
                 </div>
+                
                 <main>{children}</main>
                 {!home && (
                     <div className={styles.backToHome}>
@@ -90,7 +93,7 @@ export default function Layout({ children, home }) {
                     </div>
                 )}
             </div>
-            <Navbar />
+            {showNavbar && <Navbar />}
         </div>
     );
-}
+}                   

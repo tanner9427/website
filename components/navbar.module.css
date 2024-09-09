@@ -22,6 +22,11 @@
     /* border-radius: 10px; */
 }
 
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
 .logoName {
     display: flex;
     align-items: center;

@@ -7,8 +7,10 @@ export default function Navbar() {
         <div className={styles.navcontainer}>
             <div className={styles.navbar}>
                 <div className={styles.logoName}>
-                    <img src="/images/tt_icon.png" alt="Logo" className={styles.logo}></img>
-                    <a className={styles.name}>TANNER TRAN</a>
+                    <Link href="/" className = {styles.logoContainer}>
+                            <img src="/images/tt_icon.png" alt="Logo" className={styles.logo}></img>
+                            <span className={styles.name}>TANNER TRAN</span>
+                    </Link>
                 </div>
                 <ul className={styles.items}>
                     <li className={styles.item}>

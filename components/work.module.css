@@ -42,6 +42,7 @@
     width: 100%;
     /* padding: 20px; */
     border: 1px solid black;
+    height: 500px;
 }
 
 .projectItem:nth-child(even) .projectDescription {
@@ -70,7 +71,7 @@
 
 .textHead {
     margin-top: 0px;
-    font-size: 20px;
+    font-size: 75px;
     margin-bottom: 20px;
 }
 
@@ -99,9 +100,18 @@
     /* justify-content: space-between;
     border: var(--border);
     border-radius: 11px; */
-    width: 50%;
+    /* width: 50%; */
     align-items: flex-start;
     flex-direction: column;
+    /* display: flex; */
     justify-content: center;
     border: 1px solid black;
+    height: 100%;
+    /* object-fit: cover; */
+    background-color: #354F52;
+}
+
+.projectItemBox img {
+    object-fit: cover;
+    height: 100%;
 }
