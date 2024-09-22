@@ -10,12 +10,27 @@ export default function Leasify() {
             </Head>
             <div className={styles.container}>
                 <h1 className={styles.title}>Leasify</h1>
-                <div className={styles.content}>
-                    <p className={styles.description}>Subleasing application for Cal Poly students</p>
-                    <p className={styles.details}>
-                        Leasify is a project designed to help students at Cal Poly find and manage subleases. It was built using [Technologies used], and it addresses the challenges of [specific challenges]. The project includes features like [key features].
+                <p className={styles.description}>
+                    <p>This is a project that I worked on with a team during my software development class, Leasify is a web-based application that
+                    aims to provide subleasing options for Cal Poly students who plan on looking or listing a rental place. The application is built
+                    in Next.js to support fast refresh and modern web development features. For the databased, we utilized the Prisma schema to manage things such as property and profile information.
                     </p>
+                    <p>
+                    My main focus was on the frontend development. I started by creating mockups on Figma of
+                    various pages  such as the property listing, profile, login, and landing pages.
+                    After creating the mockups, I implemented and linked it to the appropriate pages, ensuring everything worked smoothly.
+                    I also set up the profile and listings properties and attributes. 
+                    <p>
+                    This project was really helpful for me as it provided hand-on experience with creating an application and setting goals to finish within certain time
+                    frames. Setting goals and sprints along with the group setting felt very similar to a project in the real world.
+                    </p>
+                    </p>
+                </p>
+                <div className={styles.content}>
                     <img src="/images/Leasify_Demo.png" alt="Leasify Demo" className={styles.image} />
+                    <p className={styles.details}>
+                        Landing page
+                    </p>
                 </div>
                 <p className={styles.moreInfo}>
                     For more details, visit the <a href="https://example.com" target="_blank" rel="noopener noreferrer">project website</a>.
