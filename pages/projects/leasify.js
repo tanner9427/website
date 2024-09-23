@@ -21,8 +21,8 @@ export default function Leasify() {
                     After creating the mockups, I implemented and linked it to the appropriate pages, ensuring everything worked smoothly.
                     I also set up the profile and listings properties and attributes. 
                     <p>
-                    This project was really helpful for me as it provided hand-on experience with creating an application and setting goals to finish within certain time
-                    frames. Setting goals and sprints along with the group setting felt very similar to a project in the real world.
+                    This project was really helpful for me as it provided hand-on experience with creating an application, setting realistic goals, and working on a timeline.
+                    This collaborative process with my group gave me a glance into projects I may encounter within the real world, with deadlines and objectives.
                     </p>
                     </p>
                 </p>
