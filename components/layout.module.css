@@ -6,7 +6,7 @@
 }
 
 .headerContainer {
-    background-color: #b6bdb2;
+    background: url('/images/moonbackground.png') center/cover no-repeat;
     height:100vh;
     top:0;
 }
@@ -27,7 +27,7 @@
 
 .autotype {
     font-size: 1.2rem;
-    color: #354F52;
+    color: white;
 }
 
 .autotype h1{
@@ -44,7 +44,7 @@
     display: inline-block;
     margin-left: 8px;
     font-style: italic;
-    color: #84A98C;
+    color: goldenrod;
 }
 
 .horizontalLine {
