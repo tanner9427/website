@@ -11,63 +11,79 @@ export default function Work() {
             </Head>
             <section id="myWork" className={styles.mywork}>
                 <div className={styles.headerBox}>
-                <h1>SOME OF MY PAST WORKS</h1>
+                    <h1>SOME OF MY PAST WORKS</h1>
                 </div>
 
                 <div className={styles.projectList}>
-                        <div className={styles.projectItem}>
-                            {/* <h2>Leasify</h2>
+                    <div className={styles.projectItem}>
+                        {/* <h2>Leasify</h2>
                             <p>Software project done for software class yuh.</p> */}
-                            <div className= {styles.descriptionBox}>
-                                <div className = {styles.projectDescription}>
-                                    <h1 className = {styles.textHead}>LEASIFY</h1>
-                                    <div className = {styles.textAbout}>Subleasing application for Cal Poly students</div>
-                                    <div className = {styles.textDescription}>Designed and blah</div>
-                                    <a href="" className = {styles.readMore}>Read More</a>
-                                </div>
+                        <div className={styles.descriptionBox}>
+                            <div className={styles.projectDescription}>
+                                <h1 className={styles.textHead}>Leasify</h1>
+                                <div className={styles.textAbout}>Subleasing application for Cal Poly students</div>
+                                <div className={styles.textDescription}>Designed and blah</div>
+                                <Link href="/projects/leasify" className={styles.readMore}>
+                                    Read More
+                                </Link>
                             </div>
-                            <div className={styles.projectItemBox}>
+                        </div>
+                        <div className={styles.projectItemBox}>
                             <Link href="/projects/leasify" passHref>
                                 <img src="/images/Leasify.png" alt="Leasify" className={styles.projectImage} />
                                 {/* <div className={styles.projectInfo}>
                                 <a href="https://example.com" target="_blank" className={styles.projectLink}>View Project</a>
                                 </div> */}
-                                </Link>
-                            </div>
-                            
+                            </Link>
                         </div>
 
-
-                        <div className={styles.projectItem}>
-                            {/* <h2>Leasify</h2>
-                            <p>Software project done for software class yuh.</p> */}
-                            <div className= {styles.descriptionBox}>
-                                <div className = {styles.projectDescription}>
-                                    <h1 className = {styles.textHead}>VEILODY</h1>
-                                    <div className = {styles.textAbout}>Music application</div>
-                                    <div className = {styles.textDescription}>Designed and blah</div>
-                                    <a href="" className = {styles.readMore}>Read More</a>
-                                </div>
+                    </div>
+                    <div className={styles.projectItem}>
+                        <div className={styles.descriptionBox}>
+                            <div className={styles.projectDescription}>
+                                <h1 className={styles.textHead}>Rhythm-Learning Gamification</h1>
+                                <div className={styles.textAbout}>Cal Poly Senior Project</div>
+                                <div className={styles.textDescription}>Cal Poly Senior Project analyzing Cal Poly musicians</div>
+                                <Link href="/projects/gamification" className={styles.readMore}>
+                                    Read More
+                                </Link>
                             </div>
-                            <div className={styles.projectItemBox}>
+                        </div>
+                        <div className={styles.projectItemBox}>
+                            <Link href="/projects/gamification" passHref>
+                                <img src="/images/AsteroidDodge.png" alt="Rhythm Gamification" className={styles.projectImage} />
+                                {/* <div className={styles.projectInfo}>
+                                <a href="https://example.com" target="_blank" className={styles.projectLink}>View Project</a>
+                                </div> */}
+                            </Link>
+                        </div>
+
+                    </div>
+
+                    <div className={styles.projectItem}>
+                        {/* <h2>Leasify</h2>
+                            <p>Software project done for software class yuh.</p> */}
+                        <div className={styles.descriptionBox}>
+                            <div className={styles.projectDescription}>
+                                <h1 className={styles.textHead}>VEILODY</h1>
+                                <div className={styles.textAbout}>Music application</div>
+                                <div className={styles.textDescription}>Designed and blah</div>
+                                <Link href="/projects/veilody" className={styles.readMore}>
+                                    Read More
+                                </Link>
+                            </div>
+                        </div>
+                        <div className={styles.projectItemBox}>
                             <Link href="/projects/veilody" passHref>
                                 <img src="/images/Veilody.png" alt="Veilody" className={styles.projectImage} />
                                 {/* <div className={styles.projectInfo}>
                                 <a href="https://example.com" target="_blank" className={styles.projectLink}>View Project</a>
                                 </div> */}
-                                </Link>
-                            </div>
-                            
+                            </Link>
                         </div>
 
-                    <div className={styles.projectItem}>
-                        <img src="/images/project1.jpg" alt="Veilody" className={styles.projectImage} />
-                        <div className={styles.projectInfo}>
-                            <h2>Veilody</h2>
-                            <p>Description of the project goes here. This can include technologies used, challenges faced, etc.</p>
-                            <a href="https://example.com" target="_blank" className={styles.projectLink}>View Project</a>
-                        </div>
                     </div>
+
                     <div className={styles.projectItem}>
                         <img src="/images/project1.jpg" alt="SpotSync" className={styles.projectImage} />
                         <div className={styles.projectInfo}>

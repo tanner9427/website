@@ -4,10 +4,10 @@
     /* padding: 3vh 15vh 1vh 15vh; */
     /* padding-bottom: 1vh; */
     border-bottom: solid;
-    border-color: #354F52;
+    border-color: #BBCBD9;
     position: fixed;
     width: 100vw;
-    background-color: hsla(0, 0%, 80%, .7);
+    background-color: hsla(214, 30%, 40%, 0.7);
     backdrop-filter: blur(5px);
 }
 
@@ -43,6 +43,7 @@
     font-size: 30px;
     font-weight: 800;
     padding: 5px 20px;
+    color: #BBCBD9;
 }
 
 .items {
@@ -50,8 +51,13 @@
     justify-content: space-between;
     list-style-type: none;
     font-weight: 800;
+    
 }
 
 .item {
     padding: 5px 20px;
+}
+
+.item a {
+    color: #BBCBD9;
 }

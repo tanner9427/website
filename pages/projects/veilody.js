@@ -6,10 +6,10 @@ export default function Leasify() {
     return (
         <Layout showHeader = {false} showNavbar = {true} >
             <Head>
-                <title>Leasify - Tanner Tran</title>
+                <title>Veilody - Tanner Tran</title>
             </Head>
             <div className={styles.container}>
-                <h1 className={styles.title}>Leasify</h1>
+                <h1 className={styles.title}>Veilody</h1>
                 <p className={styles.description}>
                     <p>This is a project that I worked on with a team during my software development class, Leasify is a web-based application that
                     aims to provide subleasing options for Cal Poly students who plan on looking or listing a rental place. The application is built
@@ -27,9 +27,9 @@ export default function Leasify() {
                     </p>
                 </p>
                 <div className={styles.imageGrid}>
-                    <img src="/images/Landing Page 2.png" alt="Landing Page" className={styles.projectImage} />
-                    <img src="/images/Listings Page.png" alt="Listing Page" className={styles.projectImage} />
-                    <img src="/images/Login Page.png" alt="Landing Page" className={styles.projectImage} />
+                    <img src="/images/Veilody Login.png" alt="Login Page" className={styles.projectImage} />
+                    <img src="/images/Veilody Dashboard.png" alt="Dashboard" className={styles.projectImage} />
+                    <img src="/images/Jam Session.png" alt="Jam Session" className={styles.projectImage} />
                 </div>
                 {/* <p className={styles.moreInfo}>
                     For more details, visit the <a href="https://example.com" target="_blank" rel="noopener noreferrer">project website</a>.

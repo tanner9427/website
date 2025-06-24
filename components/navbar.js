@@ -8,7 +8,7 @@ export default function Navbar() {
             <div className={styles.navbar}>
                 <div className={styles.logoName}>
                     <Link href="/" className = {styles.logoContainer}>
-                            <img src="/images/tt_icon.png" alt="Logo" className={styles.logo}></img>
+                            {/* <img src="/images/tt_icon.png" alt="Logo" className={styles.logo}></img> */}
                             <span className={styles.name}>TANNER TRAN</span>
                     </Link>
                 </div>
