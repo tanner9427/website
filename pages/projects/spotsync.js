@@ -2,14 +2,14 @@ import Head from 'next/head';
 import Layout from '../../components/layout'; // Adjust the path based on your project structure
 import styles from './project.module.css'; // Create a CSS module for styling the page
 
-export default function Leasify() {
+export default function SpotSync() {
     return (
         <Layout showHeader = {false} showNavbar = {true} >
             <Head>
-                <title>Veilody - Tanner Tran</title>
+                <title>SpotSync - Tanner Tran</title>
             </Head>
             <div className={styles.container}>
-                <h1 className={styles.title}>Veilody</h1>
+                <h1 className={styles.title}>SpotSync</h1>
                 <p className={styles.description}>
                     <p> 
                     Designed during the UCI 2024 Designathon, Veilody is a music-based social platform designed to reduce performance anxiety and allow more inclusive musical expression.
