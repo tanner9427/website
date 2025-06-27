@@ -24,8 +24,9 @@ export default function Navbar() {
                                 smooth={true}
                                 duration={500}
                                 offset={-100}
+                                className={styles.itemLink}
                             >
-                                <a className={styles.itemLink}>work</a>
+                                work
                             </ScrollLink>
                         ) : (
                             <Link href="/#myWork" className={styles.itemLink}>

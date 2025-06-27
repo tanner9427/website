@@ -24,7 +24,7 @@ export default function AboutMe() {
                 <div className={styles.description}>
                     <h1>About Me</h1>
                     <p>
-                        Hi! I'm Tanner, a UI/UX designer and developer passionate about creating beautiful, functional digital experiences. 
+                        Hi! I'm Tanner, a UI/UX designer and developer passionate about creating beautiful, functional digital experiences.
                         I love rock climbing, music, and blending creativity with technology. Currently based in Sacramento, studying at Cal Poly, SLO.
                     </p>
                 </div>

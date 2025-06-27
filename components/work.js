@@ -63,7 +63,7 @@ export default function Work() {
                             <p>Software project done for software class yuh.</p> */}
                         <div className={styles.descriptionBox}>
                             <div className={styles.projectDescription}>
-                                <h1 className={styles.textHead}>VEILODY</h1>
+                                <h1 className={styles.textHead}>Veilody</h1>
                                 <div className={styles.textAbout}>Musical platform promoting anonymous expression and live jam sessions, designed to reduce performance anxiety.</div>
                                 <Link href="/projects/veilody" className={styles.readMore}>
                                     Read More

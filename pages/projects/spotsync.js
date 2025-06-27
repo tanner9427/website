@@ -4,20 +4,23 @@ import styles from './project.module.css'; // Create a CSS module for styling th
 
 export default function SpotSync() {
     return (
-        <Layout showHeader = {false} showNavbar = {true} >
+        <Layout showHeader={false} showNavbar={true} >
             <Head>
                 <title>SpotSync - Tanner Tran</title>
             </Head>
             <div className={styles.container}>
                 <h1 className={styles.title}>SpotSync</h1>
                 <p className={styles.description}>
-                    <p> 
-                    Designed during the UCI 2024 Designathon, Veilody is a music-based social platform designed to reduce performance anxiety and allow more inclusive musical expression.
-                    The app encourages users to share their music anonymously through custom avatars and connect with oters in virtual live jam sessions.
+                    <p>
+                        SpotSync is a UI redesign project done during my User-Centered Interface Design and Development course
+                        that adds social connectivity features to match peoples music taste on Spotify.
+                        Music says a lot about who you are, so the idea of creating something to meet others with similar tastes really resonated with me.
+                        We designed SpotSync to match people based on what they're listening to through already existing data on Spotify.
+                        With the data, Spotify will generate a 'Neighbors' page with individuals, either near or far, with highest compatibility
+                        along with artists and songs that they share the most in common.
                     </p>
                     <p>
-                    My role focused on user interface design and interactive mockups. The platform was designed on Figma and covered key features such as a dashboard with a friends list,
-                    trending live sessions and genre discovery. An anonymous jam feature was also implemented where users can join or host private music rooms along with a live comment stream.
+                        The project originally started as a bigger social networking app, but we decided to pivot and focus on Spotify integration to keep things realistic and more focused.
                     </p>
                 </p>
                 <div className={styles.imageGrid}>
