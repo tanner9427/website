@@ -21,7 +21,7 @@ export default function Work() {
                         <div className={styles.descriptionBox}>
                             <div className={styles.projectDescription}>
                                 <h1 className={styles.textHead}>Leasify</h1>
-                                <div className={styles.textAbout}>Subleasing application for Cal Poly students</div>
+                                <div className={styles.textAbout}>Subleasing platform for Cal Poly students built with Next.js and Prisma. </div>
                                 <Link href="/projects/leasify" className={styles.readMore}>
                                     Read More
                                 </Link>
@@ -41,7 +41,7 @@ export default function Work() {
                         <div className={styles.descriptionBox}>
                             <div className={styles.projectDescription}>
                                 <h1 className={styles.textHead}>Rhythm-Learning Gamification</h1>
-                                <div className={styles.textAbout}>Cal Poly Senior Project</div>
+                                <div className={styles.textAbout}>Senior project investigating whether rhythm-based video games can improve music reading skills. </div>
                                 <Link href="/projects/gamification" className={styles.readMore}>
                                     Read More
                                 </Link>
@@ -64,9 +64,7 @@ export default function Work() {
                         <div className={styles.descriptionBox}>
                             <div className={styles.projectDescription}>
                                 <h1 className={styles.textHead}>VEILODY</h1>
-                                <div className={styles.textAbout}>Musical platform promoting anonymous expression and live jam sessions, designed to reduce performance anxiety.
-                                    Submission for UCI's 2024 Designathon.
-                                </div>
+                                <div className={styles.textAbout}>Musical platform promoting anonymous expression and live jam sessions, designed to reduce performance anxiety.</div>
                                 <Link href="/projects/veilody" className={styles.readMore}>
                                     Read More
                                 </Link>
@@ -89,30 +87,43 @@ export default function Work() {
                         <div className={styles.descriptionBox}>
                             <div className={styles.projectDescription}>
                                 <h1 className={styles.textHead}>SpotSync</h1>
-                                <div className={styles.textAbout}>A Spotify add-on to find friends with similar tastes near you..
+                                <div className={styles.textAbout}>A Spotify add-on to find friends with similar tastes near you.
                                 </div>
-                                <Link href="/projects/veilody" className={styles.readMore}>
+                                <Link href="/projects/spotsync" className={styles.readMore}>
                                     Read More
                                 </Link>
                             </div>
                         </div>
                         <div className={styles.projectItemBox}>
-                            <Link href="/projects/veilody" passHref>
+                            <Link href="/projects/spotsync" passHref>
                                 <img src="/images/Neighbor Profile.png" alt="SpotSync" className={styles.projectImage} />
                                 {/* <div className={styles.projectInfo}>
                                 <a href="https://example.com" target="_blank" className={styles.projectLink}>View Project</a>
                                 </div> */}
                             </Link>
                         </div>
-
                     </div>
 
                     <div className={styles.projectItem}>
-                        <img src="/images/project1.jpg" alt="SketchedOut" className={styles.projectImage} />
-                        <div className={styles.projectInfo}>
-                            <h2>SketchedOut</h2>
-                            <p>Description of the project goes here. This can include technologies used, challenges faced, etc.</p>
-                            <a href="https://example.com" target="_blank" className={styles.projectLink}>View Project</a>
+                        {/* <h2>Leasify</h2>
+                            <p>Software project done for software class yuh.</p> */}
+                        <div className={styles.descriptionBox}>
+                            <div className={styles.projectDescription}>
+                                <h1 className={styles.textHead}>SketchedOut</h1>
+                                <div className={styles.textAbout}>A Spotify add-on to find friends with similar tastes near you..
+                                </div>
+                                <Link href="/projects/sketchedout" className={styles.readMore}>
+                                    Read More
+                                </Link>
+                            </div>
+                        </div>
+                        <div className={styles.projectItemBox}>
+                            <Link href="/projects/sketchedout" passHref>
+                                <img src="/images/sketchedout.jpg" alt="SketchedOut" className={styles.projectImage} />
+                                {/* <div className={styles.projectInfo}>
+                                <a href="https://example.com" target="_blank" className={styles.projectLink}>View Project</a>
+                                </div> */}
+                            </Link>
                         </div>
                     </div>
                 </div>

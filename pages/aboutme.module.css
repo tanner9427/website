@@ -1,0 +1,46 @@
+.aboutContainer {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 20px;
+    color: #BBCBD9;
+    text-align: center;
+}
+
+.description {
+    margin-bottom: 50px;
+}
+
+.description h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.description p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.carouselWrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.slide {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide img {
+    height: 400px;
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #BBCBD9;
+}

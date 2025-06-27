@@ -61,3 +61,10 @@
 .item a {
     color: #BBCBD9;
 }
+
+.itemLink {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}

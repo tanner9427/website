@@ -27,7 +27,7 @@ export default function Leasify() {
                     </p>
                 </p>
                 <div className={styles.imageGrid}>
-                    <img src="/images/Landing Page 2.png" alt="Landing Page" className={styles.projectImage} />
+                    <img src="/images/Landing Page 1.png" alt="Landing Page" className={styles.projectImage} />
                     <img src="/images/Listings Page.png" alt="Listing Page" className={styles.projectImage} />
                     <img src="/images/Login Page.png" alt="Landing Page" className={styles.projectImage} />
                 </div>

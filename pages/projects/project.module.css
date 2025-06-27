@@ -11,6 +11,7 @@
 .title {
     font-size: 80px;
     margin-bottom: 20px;
+    color: #BBCBD9;
 }
 
 .content {
@@ -20,6 +21,7 @@ display: flex;
 
 .description {
 font-size: 40px;
+color: #BBCBD9;
 }
 
 .imageGrid {

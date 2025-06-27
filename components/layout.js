@@ -31,11 +31,11 @@ export default function Layout({ children, home, showHeader = true, showNavbar =
             {/* <Navbar /> */}
             <div className={styles.container}>
                 {showHeader && (
-                <div className={styles.headerContainer}>
-                    <header className={styles.header}>
-                        {home ? (
-                            <>
-                                {/* <Image
+                    <div className={styles.headerContainer}>
+                        <header className={styles.header}>
+                            {home ? (
+                                <>
+                                    {/* <Image
                                     priority
                                     src="/images/profile2.jpg"
                                     className={utilStyles.borderCircle}
@@ -43,25 +43,25 @@ export default function Layout({ children, home, showHeader = true, showNavbar =
                                     width={144}
                                     alt=""
                                 /> */}
-                                {/* <h1 className={utilStyles.heading2Xl}>{name}</h1> */}
-                                <div className={styles.autotype}>
-                                    <h1>Hi!</h1>
-                                    <h1>My name is Tanner, I'm a
-                                        <span className={styles.autotypeEffect}>
-                                            <ReactTypingEffect
-                                                text={["UI Designer.", "Developer.", "UX Designer."]}
-                                                speed={80}
-                                                eraseDelay={2000}
-                                                eraseSpeed={90}
-                                            />
-                                        </span>
-                                    </h1>
-                                    <h2>Computer science student currently based in Sacramento and studying at Cal Poly, SLO.</h2>
-                                </div>
-                            </>
-                        ) : (
-                            <>
-                                {/* <Link href="/">
+                                    {/* <h1 className={utilStyles.heading2Xl}>{name}</h1> */}
+                                    <div className={styles.autotype}>
+                                        <h1>Hi!</h1>
+                                        <h1>My name is Tanner, I'm a
+                                            <span className={styles.autotypeEffect}>
+                                                <ReactTypingEffect
+                                                    text={["UI Designer.", "Developer.", "UX Designer."]}
+                                                    speed={80}
+                                                    eraseDelay={2000}
+                                                    eraseSpeed={90}
+                                                />
+                                            </span>
+                                        </h1>
+                                        <h2>Computer science student currently based in Sacramento and studying at Cal Poly, SLO.</h2>
+                                    </div>
+                                </>
+                            ) : (
+                                <>
+                                    {/* <Link href="/">
                                     <Image
                                         priority
                                         src="/images/profile2.jpg"
@@ -71,27 +71,35 @@ export default function Layout({ children, home, showHeader = true, showNavbar =
                                         alt=""
                                     />
                                 </Link> */}
-                                <h2 className={utilStyles.headingLg}>
-                                    <Link href="/" className={utilStyles.colorInherit}>
-                                        {name}
-                                    </Link>
-                                </h2>
-                            </>
-                        )}
-                    </header>
-                </div>
+                                    <h2 className={utilStyles.headingLg}>
+                                        <Link href="/" className={utilStyles.colorInherit}>
+                                            {name}
+                                        </Link>
+                                    </h2>
+                                </>
+                            )}
+                        </header>
+                    </div>
                 )}
                 {/* <hr className={styles.horizontalLine}/> */}
                 <div className={styles.mywork}>
                     {home && <Work />}
                 </div>
-                
+
+
                 <main>{children}</main>
-                {!home && (
+                {/* {!home && (
                     <div className={styles.backToHome}>
                         <Link href="/">← Back to home</Link>
                     </div>
-                )}
+                )} */}
+                <div className={styles.currentlyBar}>
+                    <span>currently • </span>
+                    <span>listening to <a href="https://open.spotify.com/track/3wBy12K7BHKHJspUwJw8fq?si=6b9ea817f0674b5e" target="_blank" rel="noopener noreferrer">mojo pin</a> • </span>
+                    <span>watching <a href="https://www.imdb.com/title/tt7160372/" target="_blank" rel="noopener noreferrer">the zone of interest</a> • </span>
+                    <span>reading <a href="https://www.goodreads.com/book/show/13623848-the-song-of-achilles" target="_blank" rel="noopener noreferrer">the song of achilles</a></span>
+                    <span className={styles.signature}>© 2025 made by Tanner Tran</span>
+                </div>
             </div>
             {showNavbar && <Navbar />}
         </div>
