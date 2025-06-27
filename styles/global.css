@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Anek Gujarati", sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #051D3C;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #354F52;
+  text-decoration: none;
+}
+
+
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --border: 3px solid;
+}
