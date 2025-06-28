@@ -12,65 +12,41 @@ export const siteTitle = 'Tanner Tran';
 
 export default function Layout({ children, home, showHeader = true, showNavbar = true }) {
     return (
-        <div>
+        <div className={styles.outerContainer}>
             <Head>
                 <link rel="icon" href="/images/favicon.png" />
-                <meta
-                    name="Tanner Tran Website"
-                    content="Tanner Tran's Personal Website"
-                />
+                <meta name="Tanner Tran Website" content="Tanner Tran's Personal Website" />
                 <meta
                     property="og:image"
-                    content={`https://og-image.vercel.app/${encodeURI(
-                        siteTitle,
-                    )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+                    content={`https://og-image.vercel.app/${encodeURI(siteTitle)}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
                 />
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            {/* <Navbar /> */}
-            <div className={styles.container}>
+
+            <div className={styles.innerContainer}>
                 {showHeader && (
                     <div className={styles.headerContainer}>
                         <header className={styles.header}>
                             {home ? (
                                 <>
-                                    {/* <Image
-                                    priority
-                                    src="/images/profile2.jpg"
-                                    className={utilStyles.borderCircle}
-                                    height={144}
-                                    width={144}
-                                    alt=""
-                                /> */}
-                                    {/* <h1 className={utilStyles.heading2Xl}>{name}</h1> */}
                                     <div className={styles.autotype}>
                                         <h1>Hi!</h1>
                                         <h1>My name is Tanner, I'm a
                                             <span className={styles.autotypeEffect}>
                                                 <ReactTypingEffect
-                                                    text={["UI Designer.", "Developer.", "UX Designer."]}
+                                                    text={["UI Designer.", "Developer.", "UX Designer.", "Web Developer."]}
                                                     speed={80}
                                                     eraseDelay={2000}
                                                     eraseSpeed={90}
                                                 />
                                             </span>
                                         </h1>
-                                        <h2>Computer science student currently based in Sacramento and studying at Cal Poly, SLO.</h2>
+                                        <h2>Developer and designer based in Sacramento with a background in Computer Science and a passion for web development and design.</h2>
                                     </div>
                                 </>
                             ) : (
                                 <>
-                                    {/* <Link href="/">
-                                    <Image
-                                        priority
-                                        src="/images/profile2.jpg"
-                                        className={utilStyles.borderCircle}
-                                        height={108}
-                                        width={108}
-                                        alt=""
-                                    />
-                                </Link> */}
                                     <h2 className={utilStyles.headingLg}>
                                         <Link href="/" className={utilStyles.colorInherit}>
                                             {name}
@@ -81,18 +57,15 @@ export default function Layout({ children, home, showHeader = true, showNavbar =
                         </header>
                     </div>
                 )}
-                {/* <hr className={styles.horizontalLine}/> */}
+
                 <div className={styles.mywork}>
                     {home && <Work />}
                 </div>
 
+                <main className={styles.mainContent}>
+                    {children}
+                </main>
 
-                <main>{children}</main>
-                {/* {!home && (
-                    <div className={styles.backToHome}>
-                        <Link href="/">← Back to home</Link>
-                    </div>
-                )} */}
                 <div className={styles.currentlyBar}>
                     <span>currently • </span>
                     <span>listening to <a href="https://open.spotify.com/track/3wBy12K7BHKHJspUwJw8fq?si=6b9ea817f0674b5e" target="_blank" rel="noopener noreferrer">mojo pin</a> • </span>
@@ -101,7 +74,8 @@ export default function Layout({ children, home, showHeader = true, showNavbar =
                     <span className={styles.signature}>© 2025 made by Tanner Tran</span>
                 </div>
             </div>
+
             {showNavbar && <Navbar />}
         </div>
     );
-}                   
+}

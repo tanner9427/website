@@ -4,7 +4,7 @@ import styles from './project.module.css'; // Create a CSS module for styling th
 
 export default function Leasify() {
     return (
-        <Layout showHeader = {false} showNavbar = {true} >
+        <Layout showHeader = {false} showNavbar = {true}>
             <Head>
                 <title>Leasify - Tanner Tran</title>
             </Head>
