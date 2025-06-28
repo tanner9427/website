@@ -12,12 +12,14 @@ export default function SketchedOut() {
                 <h1 className={styles.title}>SketchedOut</h1>
                 <p className={styles.description}>
                     <p>
-                        Designed during the UCI 2024 Designathon, Veilody is a music-based social platform designed to reduce performance anxiety and allow more inclusive musical expression.
-                        The app encourages users to share their music anonymously through custom avatars and connect with oters in virtual live jam sessions.
+                        Created during the Sacramento Hackathon (SacHacks), SketchedOut is a collaborative online whiteboard that allows multiple people to draw together in real time.
+                        Using socket.io and unique room IDs, anyone is able to create a space and invite friends to join. Users can change brush sizes, colors, and clear the board.
                     </p>
                     <p>
-                        My role focused on user interface design and interactive mockups. The platform was designed on Figma and covered key features such as a dashboard with a friends list,
-                        trending live sessions and genre discovery. An anonymous jam feature was also implemented where users can join or host private music rooms along with a live comment stream.
+                        In this project, I focused on building out the front-end using React. I created the interactive canvas, drawing tools, and handled the visual design of the webpage.
+                        This was my first experience working with HTML and CSS so I definitely wouldn't say this is one of my proudest works but figuring out the customizable tools
+                        and getting the canvas to work was a huge accomplishment for me and I thoroughly enjoyed the process. Overall this project allowed me to learn new skills within a short
+                        amount of time and it was fun to see my work come to life.
                     </p>
                 </p>
                 {/* <div className={styles.imageGrid}>

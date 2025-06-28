@@ -24,8 +24,15 @@ export default function AboutMe() {
                 <div className={styles.description}>
                     <h1>About Me</h1>
                     <p>
-                        Hi! I'm Tanner, a UI/UX designer and developer passionate about creating beautiful, functional digital experiences.
-                        I love rock climbing, music, and blending creativity with technology. Currently based in Sacramento, studying at Cal Poly, SLO.
+                        I'm Tanner, a developer and designer passionate about creating beautiful, functional applications and websites.
+                        My strengths are in UI/UX design, web development, and graphic design, but I also have experience with software
+                        engineering and enjoy working with technical projects. I am very passionate on blending creativity with technology
+                        and bringing ideas to life.
+                    </p>
+                    <p>
+                        In my spare time, I love playing and listening to music. Aside from that, you will usually see me calligraphing or
+                        outside on a bike or climbing.
+                        Currently based in Sacramento.
                     </p>
                 </div>
 
