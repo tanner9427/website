@@ -21,7 +21,7 @@ export default function Gamification() {
                 </p>
                 <div className={styles.imageGrid}>
                     <img src="/images/Digital Flyer.png" alt="Digital Flyer" className={styles.projectImage} />
-                    <img src="/images/Worksheet.png" alt="Rhythm Worksheet" className={styles.projectImage} />
+                    <img src="/images/Worksheet.PNG" alt="Rhythm Worksheet" className={styles.projectImage} />
                 </div>
                 <p className={styles.moreInfo}>
                     View the full research study <Link href="/rhythm.pdf" target="_blank" rel="noopener noreferrer">
