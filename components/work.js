@@ -11,7 +11,7 @@ export default function Work() {
             </Head>
             <section id="myWork" className={styles.mywork}>
                 <div className={styles.headerBox}>
-                    <h1>SOME OF MY PAST WORKS</h1>
+                    <h1>Selected Works</h1>
                 </div>
 
                 <div className={styles.projectList}>
