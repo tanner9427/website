@@ -3,13 +3,36 @@ import styles from './navbar.module.css';
 import { Link as ScrollLink } from 'react-scroll';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { useRef } from 'react';
+import { useEffect } from 'react';
 
 export default function Navbar() {
     const router = useRouter();
     const isHome = router.pathname === '/';
     const [isOpen, setIsOpen] = useState(false);
-
+    const menuRef = useRef(null);
+    const buttonRef = useRef(null);
     const toggleMenu = () => setIsOpen(!isOpen);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const clickedOutsideMenu = menuRef.current && !menuRef.current.contains(event.target);
+            const clickedOutsideButton = buttonRef.current && !buttonRef.current.contains(event.target);
+
+            if (clickedOutsideMenu && clickedOutsideButton) {
+                setIsOpen(false);
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen]);
+
 
     return (
         <div className={styles.navcontainer}>
@@ -18,17 +41,16 @@ export default function Navbar() {
                     <Link href="/" className={styles.logoContainer}>
                         <span className={styles.name}>TANNER TRAN</span>
                     </Link>
-                    {/* <span style={{ color: 'white' }}>☰</span> */}
 
                     {/* Hamburger icon (visible only on mobile) */}
-                    <button className={styles.hamburger} onClick={toggleMenu}>
+                    <button className={styles.hamburger} onClick={toggleMenu} ref={buttonRef}>
                         <div className={styles.bar}></div>
                         <div className={styles.bar}></div>
                         <div className={styles.bar}></div>
                     </button>
                 </div>
 
-                <ul className={`${styles.items} ${isOpen ? styles.show : ''}`}>
+                <ul ref={menuRef} className={`${styles.items} ${isOpen ? styles.show : ''}`}>
                     <li className={styles.item}>
                         {isHome ? (
                             <ScrollLink

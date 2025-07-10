@@ -40,9 +40,9 @@
 .name {
     font-family: "Unbounded", sans-serif;
     font-optical-sizing: auto;
-    font-size: 30px;
+    font-size: 27px;
     font-weight: 800;
-    padding: 5px 20px;
+    padding: 5px 10px;
     color: #BBCBD9;
 }
 
@@ -77,7 +77,6 @@
     width: 25px;
     height: 3px;
     background-color: #BBCBD9;
-    /* Change to red temporarily so you can see it */
     margin: 4px 0;
 }
 
@@ -96,6 +95,7 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        position: relative;
     }
 
     .logoName {
@@ -113,16 +113,24 @@
         display: none;
         flex-direction: column;
         background-color: #f0f0f0;
-        width: 100%;
         position: absolute;
-        top: 70px;
-        left: 0;
+        top: 38px;
+        right: 0;
+        width: 40vw;
+        /* only right side */
         z-index: 1000;
         padding: 20px;
-        gap: 10px;
+        gap: 15px;
+        border-radius: 0 0 0 10px;
+        box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
     }
 
     .show {
         display: flex;
+        transform: translateY(0);
+        opacity: 1;
     }
 }
