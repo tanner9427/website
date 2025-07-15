@@ -40,18 +40,10 @@
 .name {
     font-family: "Unbounded", sans-serif;
     font-optical-sizing: auto;
-    font-size: 30px;
+    font-size: 27px;
     font-weight: 800;
-    padding: 5px 20px;
+    padding: 5px 10px;
     color: #BBCBD9;
-}
-
-.items {
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-    font-weight: 800;
-    
 }
 
 .item {
@@ -67,4 +59,78 @@
     text-decoration: none;
     color: inherit;
     font-weight: bold;
+}
+
+/* Mobile dropdown */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 2000;
+    position: relative;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #BBCBD9;
+    margin: 4px 0;
+}
+
+/* Default styles */
+.items {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    font-weight: 800;
+}
+
+/* Hide menu by default on mobile */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+
+    .logoName {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .items {
+        display: none;
+        flex-direction: column;
+        background-color: #f0f0f0;
+        position: absolute;
+        top: 38px;
+        right: 0;
+        width: 40vw;
+        /* only right side */
+        z-index: 1000;
+        padding: 20px;
+        gap: 15px;
+        border-radius: 0 0 0 10px;
+        box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .show {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

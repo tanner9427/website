@@ -26,6 +26,7 @@ export default function SpotSync() {
                 <div className={styles.imageGrid}>
                     <img src="/images/Neighbors.png" alt="Neighbors" className={styles.projectImage} />
                     <img src="/images/Neighbors Profile.png" alt="Neighbors Profile" className={styles.projectImage} />
+                    <img src="/images/SpotSync User Jouney.jpg" alt="SpotSync User Journey" className={styles.projectImage} />
                 </div>
                 {/* <p className={styles.moreInfo}>
                     For more details, visit the <a href="https://example.com" target="_blank" rel="noopener noreferrer">project website</a>.
