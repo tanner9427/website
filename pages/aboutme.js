@@ -5,14 +5,23 @@ import Slider from 'react-slick';
 
 export default function AboutMe() {
     const settings = {
-        centerMode: true,
-        centerPadding: '150px',
+        centerMode: false,
         slidesToShow: 1,
         infinite: true,
         arrows: true,
         dots: true,
         autoplay: true,
         autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: false,
+                    centerPadding: '0px',
+                },
+            },
+        ],
     };
 
     return (
