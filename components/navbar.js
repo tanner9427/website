@@ -13,6 +13,16 @@ export default function Navbar() {
     const menuRef = useRef(null);
     const buttonRef = useRef(null);
     const toggleMenu = () => setIsOpen(!isOpen);
+    const [theme, setTheme] = useState('light');
+    const [hover, setHover] = useState(false);
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -80,6 +90,27 @@ export default function Navbar() {
                         <a href="mailto:tanner9427@outlook.com">contact me</a>
                     </li>
                 </ul>
+            </div>
+            <div className={styles.themeToggle}>
+                <button
+                    onClick={toggleTheme}
+                    onMouseEnter={() => setHover(true)}
+                    onMouseLeave={() => setHover(false)}
+                >
+                    <img
+                        src={
+                            theme === 'light'
+                                ? hover
+                                    ? '/icons/moonfilled.svg'
+                                    : '/icons/moonoutline.svg'
+                                : hover
+                                    ? '/icons/sunfilled.svg'
+                                    : '/icons/sunoutline.svg'
+                        }
+                        alt="Theme Toggle"
+                        className={styles.icon}
+                    />
+                </button>
             </div>
         </div>
     );
