@@ -7,7 +7,7 @@
     border-color: #BBCBD9;
     position: fixed;
     width: 100vw;
-    background-color: hsla(214, 30%, 40%, 0.7);
+    background-color: hsla(170, 20%, 30%, 0.7);
     backdrop-filter: blur(5px);
 }
 
@@ -88,7 +88,37 @@
     font-weight: 800;
 }
 
-/* Hide menu by default on mobile */
+.themeToggle {
+    position: absolute;
+    top: 100%;
+    /* left: 20px; */
+    z-index: 999;
+    margin-top: 3px;
+}
+
+.themeToggle button {
+    width: 50px;
+    height: 50px;
+    /* border-radius: 50%; */
+    font-size: 18px;
+    background-color: hsla(170, 20%, 30%, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.themeToggle button:hover {
+    background-color: #52796f;
+}
+
+.themeToggle button:hover .icon {
+    transform: scale(1.1);
+}
+
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: row;
@@ -132,5 +162,20 @@
         display: flex;
         transform: translateY(0);
         opacity: 1;
+    }
+
+    .themeToggle .icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .themeToggle {
+        margin-top: 3px;
+    }
+
+    .themeToggle button {
+        width: 32px;
+        height: 32px;
+        padding: 0;
     }
 }

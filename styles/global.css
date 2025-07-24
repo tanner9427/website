@@ -8,7 +8,16 @@ body {
   font-family: "Anek Gujarati", sans-serif;
   line-height: 1.6;
   font-size: 18px;
-  background-color: #051D3C;
+  /* background-color: #051D3C; */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background 0.5s ease, color 0.5s ease, background-image 0.5s ease;
 }
 
 * {
@@ -28,5 +37,17 @@ img {
 }
 
 :root {
-  --border: 3px solid;
+  --background-color: #718A35;
+  --text-color: #1b1b1e;
+  --primary-color: #2a9d8f;
+  --header-bg: #f6f5f2;
+  --bg-image: url('/images/Day Background.png');
+}
+
+[data-theme='dark'] {
+  --background-color: #051D3C;
+  --text-color: #f1f6f9;
+  --primary-color: #84a98c;
+  --header-bg: #1b263b;
+  --bg-image: url('/images/Night Background.png');
 }

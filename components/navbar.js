@@ -13,6 +13,24 @@ export default function Navbar() {
     const menuRef = useRef(null);
     const buttonRef = useRef(null);
     const toggleMenu = () => setIsOpen(!isOpen);
+    const [hover, setHover] = useState(false);
+    const [theme, setTheme] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('theme') || 'light';
+        }
+        return 'light'; // fallback for SSR
+    });
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    };
+
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -80,6 +98,27 @@ export default function Navbar() {
                         <a href="mailto:tanner9427@outlook.com">contact me</a>
                     </li>
                 </ul>
+            </div>
+            <div className={styles.themeToggle}>
+                <button
+                    onClick={toggleTheme}
+                    onMouseEnter={() => setHover(true)}
+                    onMouseLeave={() => setHover(false)}
+                >
+                    <img
+                        src={
+                            theme === 'light'
+                                ? hover
+                                    ? '/icons/moonfilled.svg'
+                                    : '/icons/moonoutline.svg'
+                                : hover
+                                    ? '/icons/sunfilled.svg'
+                                    : '/icons/sunoutline.svg'
+                        }
+                        alt="Theme Toggle"
+                        className={styles.icon}
+                    />
+                </button>
             </div>
         </div>
     );

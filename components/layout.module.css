@@ -17,10 +17,14 @@
 }
 
 .headerContainer {
-    background: url('/images/moonbackground.png') center/cover no-repeat;
-    height: 100vh;
-    top: 0;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  top: 0;
 }
+
 
 .header {
     display: flex;
