@@ -13,16 +13,24 @@ export default function Navbar() {
     const menuRef = useRef(null);
     const buttonRef = useRef(null);
     const toggleMenu = () => setIsOpen(!isOpen);
-    const [theme, setTheme] = useState('light');
     const [hover, setHover] = useState(false);
+    const [theme, setTheme] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('theme') || 'light';
+        }
+        return 'light'; // fallback for SSR
+    });
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
     }, [theme]);
 
     const toggleTheme = () => {
-        setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
     };
+
 
     useEffect(() => {
         const handleClickOutside = (event) => {
