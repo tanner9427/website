@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../../components/layout'; // Adjust the path based on your project structure
 import styles from './project.module.css'; // Create a CSS module for styling the page
+import ImageModal from '../../components/ImageModal';
 
 export default function SketchedOut() {
     return (

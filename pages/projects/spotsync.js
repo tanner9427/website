@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../../components/layout'; // Adjust the path based on your project structure
 import styles from './project.module.css'; // Create a CSS module for styling the page
+import ImageModal from '../../components/ImageModal';
 
 export default function SpotSync() {
     return (
@@ -24,9 +25,9 @@ export default function SpotSync() {
                     </p>
                 </p>
                 <div className={styles.imageGrid}>
-                    <img src="/images/Neighbors.png" alt="Neighbors" className={styles.projectImage} />
-                    <img src="/images/Neighbors Profile.png" alt="Neighbors Profile" className={styles.projectImage} />
-                    <img src="/images/SpotSync User Jouney.jpg" alt="SpotSync User Journey" className={styles.projectImage} />
+                    <ImageModal src="/images/Neighbors.png" alt="Neighbors" className={styles.projectImage} />
+                    <ImageModal src="/images/Neighbors Profile.png" alt="Neighbors Profile" className={styles.projectImage} />
+                    <ImageModal src="/images/SpotSync User Jouney.jpg" alt="SpotSync User Journey" className={styles.projectImage} />
                 </div>
                 {/* <p className={styles.moreInfo}>
                     For more details, visit the <a href="https://example.com" target="_blank" rel="noopener noreferrer">project website</a>.

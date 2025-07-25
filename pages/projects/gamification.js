@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Layout from '../../components/layout'; // Adjust the path based on your project structure
 import styles from './project.module.css'; // Create a CSS module for styling the page
 import Link from 'next/link';
+import ImageModal from '../../components/ImageModal';
 
 export default function Gamification() {
     return (
@@ -20,8 +21,8 @@ export default function Gamification() {
                     </p>
                 </p>
                 <div className={styles.imageGrid}>
-                    <img src="/images/Digital Flyer.png" alt="Digital Flyer" className={styles.projectImage} />
-                    <img src="/images/Worksheet.PNG" alt="Rhythm Worksheet" className={styles.projectImage} />
+                    <ImageModal src="/images/Digital Flyer.png" alt="Digital Flyer" className={styles.projectImage} />
+                    <ImageModal src="/images/Worksheet.PNG" alt="Rhythm Worksheet" className={styles.projectImage} />
                 </div>
                 <p className={styles.moreInfo}>
                     View the full research study <Link href="/rhythm.pdf" target="_blank" rel="noopener noreferrer">

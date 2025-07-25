@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import Layout from '../../components/layout'; // Adjust the path based on your project structure
-import styles from './project.module.css'; // Create a CSS module for styling the page
+import Layout from '../../components/layout';
+import styles from './project.module.css';
+import ImageModal from '../../components/ImageModal';
 
 export default function Leasify() {
     return (
@@ -27,9 +28,9 @@ export default function Leasify() {
                     </p>
                 </p>
                 <div className={styles.imageGrid}>
-                    <img src="/images/Landing Page 1.png" alt="Landing Page" className={styles.projectImage} />
-                    <img src="/images/Listings Page.png" alt="Listing Page" className={styles.projectImage} />
-                    <img src="/images/Login Page.png" alt="Landing Page" className={styles.projectImage} />
+                    <ImageModal src="/images/Landing Page 1.png" alt="Landing Page" className={styles.projectImage} />
+                    <ImageModal src="/images/Listings Page.png" alt="Listing Page" className={styles.projectImage} />
+                    <ImageModal src="/images/Login Page.png" alt="Landing Page" className={styles.projectImage} />
                 </div>
                 {/* <p className={styles.moreInfo}>
                     For more details, visit the <a href="https://example.com" target="_blank" rel="noopener noreferrer">project website</a>.

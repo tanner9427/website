@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Layout from '../../components/layout'; // Adjust the path based on your project structure
 import styles from './project.module.css'; // Create a CSS module for styling the page
 import Link from 'next/link';
+import ImageModal from '../../components/ImageModal';
 
 export default function Veilody() {
     return (
@@ -22,9 +23,9 @@ export default function Veilody() {
                     </p>
                 </p>
                 <div className={styles.imageGrid}>
-                    <img src="/images/Veilody Login.png" alt="Login Page" className={styles.projectImage} />
-                    <img src="/images/Veilody Dashboard.png" alt="Dashboard" className={styles.projectImage} />
-                    <img src="/images/Jam Session.png" alt="Jam Session" className={styles.projectImage} />
+                    <ImageModal src="/images/Veilody Login.png" alt="Login Page" className={styles.projectImage} />
+                    <ImageModal src="/images/Veilody Dashboard.png" alt="Dashboard" className={styles.projectImage} />
+                    <ImageModal src="/images/Jam Session.png" alt="Jam Session" className={styles.projectImage} />
                 </div>
                 <p className={styles.moreInfo}>
                     View the project on Figma <Link href="https://www.figma.com/design/QGmBUuzgVTTBV2N0rZk1OI/Veilody-UCI-Designathon-2024?node-id=2-3&t=85ZSCAaFNj8z9NYI-1" target="_blank" rel="noopener noreferrer">
