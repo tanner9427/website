@@ -32,10 +32,10 @@ export default function Layout({ children, home, showHeader = true, showNavbar =
                                 <>
                                     <div className={styles.autotype}>
                                         <h1>My name is Tanner,</h1>
-                                            <h1>I'm a
+                                        <h1>I'm a
                                             <span className={styles.autotypeEffect}>
                                                 <ReactTypingEffect
-                                                    text={["UI Designer.", "Frontend Developer.", "UX Designer.", "Web Developer.", "Web Designer."]}
+                                                    text={["UI Designer.", "Frontend Developer.", "UX Designer.", "Web Developer.", "Web Designer.", "Problem-Solver."]}
                                                     speed={80}
                                                     eraseDelay={2000}
                                                     eraseSpeed={90}
@@ -71,7 +71,7 @@ export default function Layout({ children, home, showHeader = true, showNavbar =
                     <span>listening to <a href="https://open.spotify.com/track/3wBy12K7BHKHJspUwJw8fq?si=6b9ea817f0674b5e" target="_blank" rel="noopener noreferrer">mojo pin</a> • </span>
                     <span>watching <a href="https://www.imdb.com/title/tt7160372/" target="_blank" rel="noopener noreferrer">the zone of interest</a> • </span>
                     <span>reading <a href="https://www.goodreads.com/book/show/13623848-the-song-of-achilles" target="_blank" rel="noopener noreferrer">the song of achilles</a></span>
-                    <span className={styles.signature}>© 2025 Tanner Tran. Built with Next.js.</span>
+                    <span className={styles.signature}>© 2025 Tanner Tran. Built with Next.js & lots of love.</span>
                 </div>
             </div>
 

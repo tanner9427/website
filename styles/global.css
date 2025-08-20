@@ -42,6 +42,8 @@ img {
   --primary-color: #2a9d8f;
   --header-bg: #f6f5f2;
   --bg-image: url('/images/Day Background.png');
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme='dark'] {
@@ -50,4 +52,6 @@ img {
   --primary-color: #84a98c;
   --header-bg: #1b263b;
   --bg-image: url('/images/Night Background.png');
+  --card-bg: rgba(255, 255, 255, 0.07);
+  --card-border: rgba(255, 255, 255, 0.15);
 }

@@ -63,12 +63,12 @@
     white-space: nowrap;
 }
 
-.horizontalLine {
+/* .horizontalLine {
     border: none;
     border-top: 2px solid #BBCBD9;
     margin: 20px 0;
     width: 100%;
-}
+} */
 
 .mywork {
     display: flex;

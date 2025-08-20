@@ -11,7 +11,7 @@ export default function Work() {
             </Head>
             <section id="myWork" className={styles.mywork}>
                 <div className={styles.headerBox}>
-                    <h1>Selected Works</h1>
+                    <h1>Selected Works & Experience</h1>
                 </div>
 
                 <div className={styles.projectList}>
@@ -119,7 +119,7 @@ export default function Work() {
                         </div>
                         <div className={styles.projectItemBox}>
                             <Link href="/projects/sketchedout" passHref>
-                                <img src="/images/sketchedout.jpg" alt="SketchedOut" className={styles.projectImage} />
+                                <img src="/images/sketchedout.png" alt="SketchedOut" className={styles.projectImage} />
                                 {/* <div className={styles.projectInfo}>
                                 <a href="https://example.com" target="_blank" className={styles.projectLink}>View Project</a>
                                 </div> */}
