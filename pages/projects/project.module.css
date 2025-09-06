@@ -48,7 +48,7 @@
 
 .peekPrev, .peekNext {
   position: fixed;
-  top: 50%;
+  top: 90%;
   transform: translateY(-50%);
   background: rgba(53, 79, 82, 0.9);
   color: white;

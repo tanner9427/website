@@ -2,10 +2,14 @@ import Head from 'next/head';
 import Layout from '../../components/layout';
 import styles from './project.module.css';
 import ImageModal from '../../components/ImageModal';
+import { projects } from '../../components/projectData';
+import { getProjectNav } from '../../components/projectNav';
+import Link from 'next/link';
 
 export default function Leasify() {
+    const { prev, next } = getProjectNav('leasify');
     return (
-        <Layout showHeader = {false} showNavbar = {true}>
+        <Layout showHeader={false} showNavbar={true}>
             <Head>
                 <title>Leasify - Tanner Tran</title>
             </Head>
@@ -13,18 +17,18 @@ export default function Leasify() {
                 <h1 className={styles.title}>Leasify</h1>
                 <p className={styles.description}>
                     <p>This is a project that I worked on with a team during my software development class, Leasify is a web-based application that
-                    aims to provide subleasing options for Cal Poly students who plan on looking or listing a rental place. The application is built
-                    in Next.js to support fast refresh and modern web development features. For the databased, we utilized the Prisma schema to manage things such as property and profile information.
+                        aims to provide subleasing options for Cal Poly students who plan on looking or listing a rental place. The application is built
+                        in Next.js to support fast refresh and modern web development features. For the databased, we utilized the Prisma schema to manage things such as property and profile information.
                     </p>
                     <p>
-                    My main focus was on the frontend development. I started by creating mockups on Figma of
-                    various pages  such as the property listing, profile, login, and landing pages.
-                    After creating the mockups, I implemented and linked it to the appropriate pages, ensuring everything worked smoothly.
-                    I also set up the profile and listings properties and attributes. 
-                    <p>
-                    This project was really helpful for me as it provided hand-on experience with creating an application, setting realistic goals, and working on a timeline.
-                    This collaborative process with my group gave me a glance into projects I may encounter within the real world, with deadlines and objectives.
-                    </p>
+                        My main focus was on the frontend development. I started by creating mockups on Figma of
+                        various pages  such as the property listing, profile, login, and landing pages.
+                        After creating the mockups, I implemented and linked it to the appropriate pages, ensuring everything worked smoothly.
+                        I also set up the profile and listings properties and attributes.
+                        <p>
+                            This project was really helpful for me as it provided hand-on experience with creating an application, setting realistic goals, and working on a timeline.
+                            This collaborative process with my group gave me a glance into projects I may encounter within the real world, with deadlines and objectives.
+                        </p>
                     </p>
                 </p>
                 <div className={styles.imageGrid}>
@@ -36,6 +40,14 @@ export default function Leasify() {
                     For more details, visit the <a href="https://example.com" target="_blank" rel="noopener noreferrer">project website</a>.
                 </p> */}
             </div>
+            {/* Peek buttons */}
+            <Link href={`/projects/${prev.slug}`} className={styles.peekPrev} aria-label={`Previous: ${prev.title}`}>
+                <span>← {prev.title}</span>
+            </Link>
+
+            <Link href={`/projects/${next.slug}`} className={styles.peekNext} aria-label={`Next: ${next.title}`}>
+                <span>{next.title} →</span>
+            </Link>
         </Layout>
     );
 }

@@ -2,8 +2,13 @@ import Head from 'next/head';
 import Layout from '../../components/layout'; // Adjust the path based on your project structure
 import styles from './project.module.css'; // Create a CSS module for styling the page
 import ImageModal from '../../components/ImageModal';
+import { projects } from '../../components/projectData';
+import { getProjectNav } from '../../components/projectNav';
+import Link from 'next/link';
 
 export default function SpotSync() {
+    const { prev, next } = getProjectNav('spotsync');
+
     return (
         <Layout showHeader={false} showNavbar={true} >
             <Head>
@@ -33,6 +38,14 @@ export default function SpotSync() {
                     For more details, visit the <a href="https://example.com" target="_blank" rel="noopener noreferrer">project website</a>.
                 </p> */}
             </div>
+            {/* Peek buttons */}
+            <Link href={`/projects/${prev.slug}`} className={styles.peekPrev} aria-label={`Previous: ${prev.title}`}>
+                <span>← {prev.title}</span>
+            </Link>
+
+            <Link href={`/projects/${next.slug}`} className={styles.peekNext} aria-label={`Next: ${next.title}`}>
+                <span>{next.title} →</span>
+            </Link>
         </Layout>
     );
 }
