@@ -3,5 +3,6 @@ export const projects = [
   { slug: "gamification", title: "Rhythm Learning Gamification" },
   { slug: "veilody", title: "Veilody" },
   { slug: "spotsync", title: "SpotSync" },
-  { slug: "sketchedout", title: "SketchedOut" }
+  { slug: "nybagel", title: "WordPress Bagel Shop Redesign" },
+  { slug: "sketchedout", title: "SketchedOut" },
 ];

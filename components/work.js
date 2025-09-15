@@ -109,8 +109,31 @@ export default function Work() {
                             <p>Software project done for software class yuh.</p> */}
                         <div className={styles.descriptionBox}>
                             <div className={styles.projectDescription}>
+                                <h1 className={styles.textHead}>Bagel Shop Redesign</h1>
+                                <div className={styles.textAbout}>Elementor-based redesign emphasizing clear navigation, appetizing visuals, and accessible user experience.
+                                </div>
+                                <Link href="/projects/nybagel" className={styles.readMore}>
+                                    Read More
+                                </Link>
+                            </div>
+                        </div>
+                        <div className={styles.projectItemBox}>
+                            <Link href="/projects/nybagel" passHref>
+                                <img src="/images/nyhomepage.png" alt="Bagel Shop Redesign" className={styles.projectImage} />
+                                {/* <div className={styles.projectInfo}>
+                                <a href="https://example.com" target="_blank" className={styles.projectLink}>View Project</a>
+                                </div> */}
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className={styles.projectItem}>
+                        {/* <h2>Leasify</h2>
+                            <p>Software project done for software class yuh.</p> */}
+                        <div className={styles.descriptionBox}>
+                            <div className={styles.projectDescription}>
                                 <h1 className={styles.textHead}>SketchedOut</h1>
-                                <div className={styles.textAbout}>A Spotify add-on to find friends with similar tastes near you..
+                                <div className={styles.textAbout}>A Spotify add-on to find friends with similar tastes near you.
                                 </div>
                                 <Link href="/projects/sketchedout" className={styles.readMore}>
                                     Read More
@@ -126,6 +149,8 @@ export default function Work() {
                             </Link>
                         </div>
                     </div>
+
+
                 </div>
             </section>
         </div>

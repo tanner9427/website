@@ -18,7 +18,6 @@ export default function Gamification() {
       <div className={styles.container}>
         <h1 className={styles.title}>Rhythm Learning Gamification</h1>
 
-        {/* use div as wrapper; inner can stay <p> */}
         <div className={styles.description}>
           <p>
             For my senior project, I developed a rhythm-based video game to help musicians improve their ability to read and perform rhythms.

@@ -75,6 +75,16 @@
   transform: translateY(-50%) scale(1.05);
 }
 
+.videoPlayer {
+  width: 100%;
+  max-width: 960px;
+  border-radius: 16px;
+  margin: 1.5rem auto;
+  display: block;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+
 /* Hide buttons on mobile */
 @media (max-width: 768px) {
   .peekPrev, .peekNext {
