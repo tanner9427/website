@@ -3,6 +3,7 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import HeroParallax from '../components/HeroParallax';
 
 export default function Home() {
   const router = useRouter();
@@ -26,6 +27,7 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <HeroParallax />
       <section className={utilStyles.headingMd}>
       </section>
     </Layout>

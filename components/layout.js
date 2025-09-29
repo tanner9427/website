@@ -10,7 +10,7 @@ import Work from './work';
 const name = 'Tanner Tran';
 export const siteTitle = 'Tanner Tran';
 
-export default function Layout({ children, home, showHeader = true, showNavbar = true }) {
+export default function Layout({ children, home, showHeader = false, showNavbar = true }) {
     return (
         <div className={styles.outerContainer}>
             <Head>
@@ -23,12 +23,12 @@ export default function Layout({ children, home, showHeader = true, showNavbar =
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-
+            {/* {showNavbar && <Navbar />} */}
             <div className={styles.innerContainer}>
                 {showHeader && (
                     <div className={styles.headerContainer}>
                         <header className={styles.header}>
-                            {home ? (
+                            {/* {home ? (
                                 <>
                                     <div className={styles.autotype}>
                                         <h1>My name is Tanner,</h1>
@@ -53,18 +53,17 @@ export default function Layout({ children, home, showHeader = true, showNavbar =
                                         </Link>
                                     </h2>
                                 </>
-                            )}
+                            )} */}
                         </header>
                     </div>
                 )}
+                <main className={styles.mainContent}>
+                    {children}
+                </main>
 
                 <div className={styles.mywork}>
                     {home && <Work />}
                 </div>
-
-                <main className={styles.mainContent}>
-                    {children}
-                </main>
 
                 <div className={styles.currentlyBar}>
                     <span>currently • </span>
@@ -74,8 +73,6 @@ export default function Layout({ children, home, showHeader = true, showNavbar =
                     <span className={styles.signature}>© 2025 Tanner Tran. Built with Next.js & lots of love.</span>
                 </div>
             </div>
-
-            {showNavbar && <Navbar />}
         </div>
     );
 }

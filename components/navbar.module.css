@@ -1,181 +1,89 @@
-/* navbar.module.css */
-.navcontainer {
-    top: 0;
-    /* padding: 3vh 15vh 1vh 15vh; */
-    /* padding-bottom: 1vh; */
-    border-bottom: solid;
-    border-color: #BBCBD9;
-    position: fixed;
-    width: 100vw;
-    background-color: hsla(170, 20%, 30%, 0.7);
-    backdrop-filter: blur(5px);
+/* The portal root that sits over the entire page */
+.overlay {
+  position: absolute;         /* relative to body/viewport */
+  top: 16px;                  /* how far from the top when floating */
+  left: 0;
+  width: 100%;
+  z-index: 10000;             /* above hero & other sections */
+  pointer-events: none;       /* don't block page */
 }
 
+/* Centers the pill; re-enables interactivity for nav */
+.wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;       /* clickable */
+}
+
+/* Floating pill (centered). CSS vars are animated by GSAP */
 .navbar {
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    z-index: 1000;
-    align-items: center;
-    padding-left: 3vh;
-    padding-right: 3vh;
-    /* border-radius: 10px; */
+  --pill-radius: 18px;
+  --bg: rgba(20, 28, 34, 0.6);
+  --h: 72px;
+
+  height: var(--h);
+  width: min(980px, calc(100vw - 32px));
+  padding: 10px 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  border-radius: var(--pill-radius);
+  background-color: var(--bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+
+  transition:
+    background-color 0.55s ease,
+    box-shadow 0.55s ease,
+    border-radius 0.55s ease,
+    height 0.55s ease;
+
+  z-index: 10001; /* above overlay */
 }
 
-.logoContainer {
-    display: flex;
-    align-items: center;
+/* When fixed to top (full width, shorter) */
+.fixed {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  width: 100vw;
+  margin: 0;
+  border-radius: 0;
+  z-index: 10001;
 }
 
-.logoName {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+/* Branding & items (unchanged from your style, trimmed for brevity) */
+.logoRow { display: flex; align-items: center; justify-content: space-between; flex: 1 1 auto; }
+.logoContainer { display: flex; align-items: center; text-decoration: none; }
+.name { font-family: "Unbounded", system-ui, sans-serif; font-size: 1.35rem; font-weight: 800; padding: 6px 10px; color: #BBCBD9; letter-spacing: 0.5px; }
+.items { display: flex; align-items: center; gap: 6px; list-style: none; margin: 0; padding: 0; font-weight: 800; }
+.item { padding: 6px 10px; }
+.itemLink, .item a { color: #BBCBD9; text-decoration: none; line-height: 1; }
+.itemLink:hover, .item a:hover { opacity: 0.9; }
 
-.logoName img {
-    width: 56px;
-}
+/* Mobile */
+.hamburger { display: none; flex-direction: column; cursor: pointer; background: none; border: none; padding: 10px; position: relative; z-index: 2; }
+.bar { width: 25px; height: 3px; background-color: #BBCBD9; margin: 4px 0; border-radius: 1px; }
 
-.name {
-    font-family: "Unbounded", sans-serif;
-    font-optical-sizing: auto;
-    font-size: 27px;
-    font-weight: 800;
-    padding: 5px 10px;
-    color: #BBCBD9;
-}
-
-.item {
-    padding: 5px 20px;
-}
-
-.item a {
-    color: #BBCBD9;
-}
-
-.itemLink {
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
-}
-
-/* Mobile dropdown */
-.hamburger {
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .items {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 10px;
-    z-index: 2000;
-    position: relative;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: #BBCBD9;
-    margin: 4px 0;
-}
-
-/* Default styles */
-.items {
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-    font-weight: 800;
-}
-
-.themeToggle {
     position: absolute;
-    top: 100%;
-    /* left: 20px; */
-    z-index: 999;
-    margin-top: 3px;
-}
-
-.themeToggle button {
-    width: 50px;
-    height: 50px;
-    /* border-radius: 50%; */
-    font-size: 18px;
-    background-color: hsla(170, 20%, 30%, 0.7);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.themeToggle button:hover {
-    background-color: #52796f;
-}
-
-.themeToggle button:hover .icon {
-    transform: scale(1.1);
-}
-
-@media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        position: relative;
-    }
-
-    .logoName {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .items {
-        display: none;
-        flex-direction: column;
-        background-color: #f0f0f0;
-        position: absolute;
-        top: 38px;
-        right: 0;
-        width: 40vw;
-        /* only right side */
-        z-index: 1000;
-        padding: 20px;
-        gap: 15px;
-        border-radius: 0 0 0 10px;
-        box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
-        transform: translateY(-20px);
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .show {
-        display: flex;
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .themeToggle .icon {
-        width: 25px;
-        height: 25px;
-    }
-
-    .themeToggle {
-        margin-top: 3px;
-    }
-
-    .themeToggle button {
-        width: 32px;
-        height: 32px;
-        padding: 0;
-    }
+    top: calc(100% + 8px);
+    right: 8px;
+    flex-direction: column;
+    background-color: rgba(26, 34, 40, 0.98);
+    padding: 14px; gap: 10px; border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+    transform: translateY(-10px); opacity: 0;
+    transition: all 0.22s ease-in-out;
+  }
+  .show { display: flex; transform: translateY(0); opacity: 1; }
+  .item { padding: 6px 4px; }
+  .itemLink, .item a { color: #E6EEF5; }
 }
