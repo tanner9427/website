@@ -20,14 +20,13 @@ export default function HeroParallax() {
                 scrollTrigger: {
                     trigger: root.current,
                     start: "top top",
-                    end: "+=120vh",     // adjust to taste
+                    end: "+=450vh",
                     scrub: true,
-                    pin: true,
                 },
                 defaults: { ease: "none" }
             })
                 .to(starsRef.current, { y: -20 }, 0)
-                .to(mountainRef.current, { y: 240, scale: 1.06, opacity: 0.2 }, 0);
+                .to(mountainRef.current, { y: 800, scale: 1.06, }, 0);
         }, root);
 
         return () => ctx.revert();
@@ -53,7 +52,7 @@ export default function HeroParallax() {
         .rocks { z-index: 3; }
         .bottomFade {
           position: absolute; left: 0; right: 0; bottom: -1px; height: 22vh;
-          background: linear-gradient(180deg, rgba(5,29,60,0) 0%, #051d3c 65%, #041730 100%);
+          background: linear-gradient(180deg, rgba(5,29,60,0) 0%, #051d3c 85%, #041730 100%);
           z-index: 4; pointer-events: none;
         }
         .hint {

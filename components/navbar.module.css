@@ -16,7 +16,7 @@
   pointer-events: auto;       /* clickable */
 }
 
-/* Floating pill (centered). CSS vars are animated by GSAP */
+/* Floating pill (centered).*/
 .navbar {
   --pill-radius: 18px;
   --bg: rgba(20, 28, 34, 0.6);
@@ -54,6 +54,13 @@
   margin: 0;
   border-radius: 0;
   z-index: 10001;
+}
+
+/* ensure hand cursor for both react-scroll <Link> and Next.js <Link> */
+.items a,
+.itemLink,
+.items [role="link"] {
+  cursor: pointer;
 }
 
 /* Branding & items (unchanged from your style, trimmed for brevity) */
