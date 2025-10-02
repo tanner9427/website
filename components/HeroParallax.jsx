@@ -9,12 +9,17 @@ export default function HeroParallax() {
   const mountainRef = useRef(null);
   const rocksRef = useRef(null);
 
+  // aurora
+  const auroraRef = useRef(null);
+
   // intro ref
   const introRef = useRef(null);
   const wordsRef = useRef([]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
 
     const ctx = gsap.context(() => {
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -43,6 +48,73 @@ export default function HeroParallax() {
         delay: 0.25,
         clearProps: "transform,opacity" // keep final state clean
       });
+
+      gsap.to(".aurora.s", {
+        x: "8vw",              // drift right
+        yPercent: -3,          // tiny upward bias
+        scale: 1.02,
+        duration: 22,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+
+      gsap.to(".aurora.flip", {
+        x: "-8vw",             // drift left
+        yPercent: 2,           // tiny downward bias
+        scale: 1.025,
+        duration: 26,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+
+      // Gentle vertical oscillation to create the “snake” feeling (out of phase)
+      gsap.to(".aurora.s", {
+        y: "3vh",
+        duration: 10,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+
+      gsap.to(".aurora.flip", {
+        y: "-3vh",
+        duration: 10,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 5, // 180° phase shift vs .s
+      });
+
+      // Optional: slight rotation oscillation for organic feel
+      gsap.to(".aurora.s", {
+        rotate: 1.2,
+        duration: 16,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+      gsap.to(".aurora.flip", {
+        rotate: -1.4,
+        duration: 18,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+
+      // Optional: add a tiny scroll parallax to the whole aurora stack
+      gsap.to(".aurora-stack", {
+        yPercent: -8,
+        ease: "none",
+        scrollTrigger: {
+          trigger: root.current,
+          start: "top top",
+          end: "+=200vh",
+          scrub: true,
+        },
+      });
+
     }, root);
 
     return () => ctx.revert();
@@ -54,7 +126,7 @@ export default function HeroParallax() {
         <Navbar />
       </div>
 
-      {/* NEW: Intro text */}
+      {/* Intro text */}
       <h1 className="intro" ref={introRef} aria-label="Hi, I'm Tanner">
         <span className="word" ref={(el) => (wordsRef.current[0] = el)}>Hi,</span>{" "}
         <span className="word" ref={(el) => (wordsRef.current[1] = el)}>I'm</span>{" "}
@@ -62,6 +134,9 @@ export default function HeroParallax() {
       </h1>
 
       <img ref={starsRef} src="/images/Night Back.png" alt="" className="layer stars" />
+      <div className="auroraWrap">
+        <img src="/images/aurora.svg" alt="Aurora" className="aurora" />
+      </div>
       <img ref={mountainRef} src="/images/Night Mountain.png" alt="" className="layer mountain" />
       <img ref={rocksRef} src="/images/Night Foreground.png" alt="" className="layer rocks" />
 
@@ -74,6 +149,43 @@ export default function HeroParallax() {
         .stars { z-index: 1; }
         .mountain { z-index: 2; }
         .rocks { z-index: 3; }
+
+        .auroraWrap {
+          position: absolute;
+          top: -30%;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;          
+          pointer-events: none;
+        }
+
+        :global(.aurora),
+        :global(.aurora.clone) {
+          position: absolute; inset: 0;           
+          width: 100%; height: 100%;
+          object-fit: cover;
+          object-position: center top;            
+          mix-blend-mode: screen;
+          will-change: transform, filter, opacity;
+        }
+
+        /* Base layer: subtle */
+        :global(.aurora) {
+          opacity: 0.9;
+        }
+
+        /* Clone layer: softer, slightly blurrier glow that drifts differently */
+        :global(.aurora.clone) {
+          opacity: 0.55;
+          filter: blur(2px);
+        }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+          :global(.aurora), :global(.aurora.clone) { animation: none !important; }
+        }
+
 
         .intro {
           position: absolute;
