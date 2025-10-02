@@ -3,7 +3,9 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import HeroParallax from '../components/HeroParallax';
+import dynamic from 'next/dynamic';
+
+const HeroParallax = dynamic(() => import('../components/HeroParallax'), { ssr: false });
 
 export default function Home() {
   const router = useRouter();

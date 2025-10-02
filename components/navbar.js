@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import styles from './navbar.module.css';
 import { Link as ScrollLink } from 'react-scroll';
@@ -5,9 +6,9 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Flip } from 'gsap/Flip';
+import { gsap } from 'gsap/dist/gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { Flip } from 'gsap/dist/Flip';
 
 export default function Navbar() {
   const router = useRouter();
