@@ -16,9 +16,7 @@ export default function Layout({ children, home, showHeader = false, showNavbar 
         const cursor = document.getElementById("cursor");
         if (!cursor) return;
 
-        // ------------------------
         // Config & helpers
-        // ------------------------
         const HOVER_SEL =
             'a, button, [role="button"], label, input[type="submit"], .readMore, [data-hover-glow]';
 
@@ -48,9 +46,7 @@ export default function Layout({ children, home, showHeader = false, showNavbar 
             applyHoverFromElement(el);
         };
 
-        // ------------------------
         // Pointer movement (primary source of truth)
-        // ------------------------
         const onPointerMove = (e) => {
             lastX = e.clientX;
             lastY = e.clientY;

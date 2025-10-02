@@ -46,7 +46,7 @@ export default function HeroParallax() {
         ease: "power2.out",
         stagger: 0.30,
         delay: 0.25,
-        clearProps: "transform,opacity" // keep final state clean
+        clearProps: "transform,opacity" // state clean
       });
 
       gsap.to(".aurora.s", {
@@ -69,7 +69,6 @@ export default function HeroParallax() {
         repeat: -1,
       });
 
-      // Gentle vertical oscillation to create the “snake” feeling (out of phase)
       gsap.to(".aurora.s", {
         y: "3vh",
         duration: 10,
@@ -87,7 +86,7 @@ export default function HeroParallax() {
         delay: 5, // 180° phase shift vs .s
       });
 
-      // Optional: slight rotation oscillation for organic feel
+      // slight rotation oscillation for organic feel
       gsap.to(".aurora.s", {
         rotate: 1.2,
         duration: 16,
@@ -103,7 +102,7 @@ export default function HeroParallax() {
         repeat: -1,
       });
 
-      // Optional: add a tiny scroll parallax to the whole aurora stack
+      // scroll parallax to the whole aurora stack
       gsap.to(".aurora-stack", {
         yPercent: -8,
         ease: "none",
@@ -126,7 +125,6 @@ export default function HeroParallax() {
         <Navbar />
       </div>
 
-      {/* Intro text */}
       <h1 className="intro" ref={introRef} aria-label="Hi, I'm Tanner">
         <span className="word" ref={(el) => (wordsRef.current[0] = el)}>Hi,</span>{" "}
         <span className="word" ref={(el) => (wordsRef.current[1] = el)}>I'm</span>{" "}

@@ -61,7 +61,7 @@ html, body, *:not(.no-custom-cursor) {
   cursor: none !important;
 }
 
-/* STAR-LIKE CURSOR (fuzzy, irregular, twinkly) */
+/* STAR-LIKE CURSOR  */
 .cursor {
   position: fixed;
   top: 0; left: 0;
@@ -84,7 +84,6 @@ html, body, *:not(.no-custom-cursor) {
   animation: cursorTwinkle 2.8s ease-in-out infinite;
 }
 
-/* Irregular fuzzy halo (layered off-center ellipses = less “circle-y”) */
 .cursor::before {
   content: "";
   position: absolute;
@@ -136,7 +135,7 @@ html:not(:hover) .cursor {
   animation: ringPulse 900ms ease-out infinite;
 }
 
-/* Hidden state (from your JS): fully kill the glow when leaving page */
+/* fully kill the glow when leaving page */
 .cursor.hidden {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.7);
