@@ -133,7 +133,7 @@ export default function HeroParallax() {
 
       <img ref={starsRef} src="/images/Night Back.png" alt="" className="layer stars" />
       <div className="auroraWrap">
-        <img src="/images/aurora.svg" alt="Aurora" className="aurora" />
+        <img src="/images/Aurora.svg" alt="Aurora" className="aurora" />
       </div>
       <img ref={mountainRef} src="/images/Night Mountain.png" alt="" className="layer mountain" />
       <img ref={rocksRef} src="/images/Night Foreground.png" alt="" className="layer rocks" />
