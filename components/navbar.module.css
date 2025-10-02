@@ -4,7 +4,7 @@
   top: 16px;                  /* how far from the top when floating */
   left: 0;
   width: 100%;
-  z-index: 10000;             /* above hero & other sections */
+  z-index: 9998;             /* above hero & other sections */
   pointer-events: none;       /* don't block page */
 }
 

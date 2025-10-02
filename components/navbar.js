@@ -136,12 +136,12 @@ export default function Navbar() {
             </li>
             <li className={styles.item}>
               <Link href="/aboutme" className={styles.itemLink} onClick={() => setIsOpen(false)}>
-                about me
+                about
               </Link>
             </li>
             <li className={styles.item}>
               <a href="mailto:tanner9427@outlook.com" className={styles.itemLink} onClick={() => setIsOpen(false)}>
-                contact me
+                contact
               </a>
             </li>
           </ul>

@@ -10,7 +10,7 @@ This is my personal portfolio website built with Next.js. It showcases my work, 
 
 - "Selected Works & Experience" section highlighting projects like Leasify, Xpire, Veilody, and more
 
-- Dynamic landing page with typing effect introduction
+- Dynamic landing page with GSAP scroll effects
 
 # Tech Stack
 

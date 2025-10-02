@@ -6,11 +6,146 @@ import Link from 'next/link';
 import Navbar from './navbar';
 import ReactTypingEffect from 'react-typing-effect';
 import Work from './work';
+import { useEffect } from 'react';
 
 const name = 'Tanner Tran';
 export const siteTitle = 'Tanner Tran';
 
 export default function Layout({ children, home, showHeader = false, showNavbar = true }) {
+    useEffect(() => {
+        const cursor = document.getElementById("cursor");
+        if (!cursor) return;
+
+        // ------------------------
+        // Config & helpers
+        // ------------------------
+        const HOVER_SEL =
+            'a, button, [role="button"], label, input[type="submit"], .readMore, [data-hover-glow]';
+
+        let lastX = -1;
+        let lastY = -1;
+        let rafId = 0;
+        let scrolling = false;
+        let scrollEndTimer;
+
+        const show = () => cursor.classList.remove("hidden");
+        const hide = () => {
+            cursor.classList.add("hidden");
+            cursor.classList.remove("hover");
+        };
+
+        const applyHoverFromElement = (el) => {
+            if (el && el.closest && el.closest(HOVER_SEL)) {
+                cursor.classList.add("hover");
+            } else {
+                cursor.classList.remove("hover");
+            }
+        };
+
+        const syncHoverUnderPointer = () => {
+            if (lastX < 0 || lastY < 0) return;
+            const el = document.elementFromPoint(lastX, lastY);
+            applyHoverFromElement(el);
+        };
+
+        // ------------------------
+        // Pointer movement (primary source of truth)
+        // ------------------------
+        const onPointerMove = (e) => {
+            lastX = e.clientX;
+            lastY = e.clientY;
+            cursor.style.top = lastY + "px";
+            cursor.style.left = lastX + "px";
+            show();
+            syncHoverUnderPointer(); // immediate update on real moves
+        };
+
+        // Fallback over/out (still useful when moving between elements)
+        const onPointerOver = (e) => applyHoverFromElement(e.target);
+        const onPointerOut = (e) => {
+            const to = e.relatedTarget;
+            if (!to || !to.closest || !to.closest(HOVER_SEL)) {
+                cursor.classList.remove("hover");
+            }
+        };
+
+        // ------------------------
+        // Scroll-aware hover sync
+        // ------------------------
+        const startScrollRaf = () => {
+            if (rafId) return;
+            const loop = () => {
+                syncHoverUnderPointer();
+                if (scrolling) rafId = requestAnimationFrame(loop);
+                else {
+                    cancelAnimationFrame(rafId);
+                    rafId = 0;
+                }
+            };
+            rafId = requestAnimationFrame(loop);
+        };
+
+        const onAnyScroll = () => {
+            scrolling = true;
+            startScrollRaf();
+            clearTimeout(scrollEndTimer);
+            scrollEndTimer = setTimeout(() => {
+                scrolling = false;
+                syncHoverUnderPointer(); // one last sync
+            }, 120); // debounce scroll end
+        };
+
+        // Listen on capture so we catch scrolls in nested containers too
+        document.addEventListener("scroll", onAnyScroll, true);
+        window.addEventListener("wheel", onAnyScroll, { passive: true });
+        // Touchpad/trackpad kinetic scroll on some browsers:
+        window.addEventListener("touchmove", onAnyScroll, { passive: true });
+        window.addEventListener("resize", onAnyScroll);
+
+        // ------------------------
+        // Hide when leaving tab/window
+        // ------------------------
+        const onMouseOutWindow = (e) => { if (!e.relatedTarget) hide(); };
+        const onMouseLeaveDoc = () => hide();
+        const onBlur = () => hide();
+        const onVisibility = () => (document.hidden ? hide() : show());
+        const onPointerCancel = () => hide();
+
+        document.addEventListener("pointermove", onPointerMove, { passive: true });
+        document.addEventListener("pointerover", onPointerOver, true);
+        document.addEventListener("pointerout", onPointerOut, true);
+
+        window.addEventListener("mouseout", onMouseOutWindow, true);
+        document.addEventListener("mouseleave", onMouseLeaveDoc, true);
+        window.addEventListener("blur", onBlur);
+        document.addEventListener("visibilitychange", onVisibility);
+        document.addEventListener("pointercancel", onPointerCancel, true);
+
+        // Start hidden until first move
+        hide();
+
+        return () => {
+            cancelAnimationFrame(rafId);
+            clearTimeout(scrollEndTimer);
+
+            document.removeEventListener("pointermove", onPointerMove);
+            document.removeEventListener("pointerover", onPointerOver, true);
+            document.removeEventListener("pointerout", onPointerOut, true);
+
+            document.removeEventListener("scroll", onAnyScroll, true);
+            window.removeEventListener("wheel", onAnyScroll);
+            window.removeEventListener("touchmove", onAnyScroll);
+            window.removeEventListener("resize", onAnyScroll);
+
+            window.removeEventListener("mouseout", onMouseOutWindow, true);
+            document.removeEventListener("mouseleave", onMouseLeaveDoc, true);
+            window.removeEventListener("blur", onBlur);
+            document.removeEventListener("visibilitychange", onVisibility);
+            document.removeEventListener("pointercancel", onPointerCancel, true);
+        };
+    }, []);
+
+
     return (
         <div className={styles.outerContainer}>
             <Head>
@@ -73,6 +208,7 @@ export default function Layout({ children, home, showHeader = false, showNavbar 
                     <span className={styles.signature}>© 2025 Tanner Tran. Built with Next.js, chalky hands, & ❤.</span>
                 </div>
             </div>
+            <div id="cursor" className="cursor"></div>
         </div>
     );
 }

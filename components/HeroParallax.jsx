@@ -77,8 +77,8 @@ export default function HeroParallax() {
 
         .intro {
           position: absolute;
-          top: 25%;                 /* ~3/4 up the hero (from bottom) */
-          left: 10%;                /* "left-ish" */
+          top: 25%;                 
+          left: 5%;                
           margin: 0;
           font-family: "Unbounded", system-ui, sans-serif;
           font-weight: 800;
@@ -94,9 +94,19 @@ export default function HeroParallax() {
         .intro .word { display: inline-block; } /* needed so each word can move independently */
 
         .bottomFade {
-          position: absolute; left: 0; right: 0; bottom: -1px; height: 22vh;
-          background: linear-gradient(180deg, rgba(5,29,60,0) 0%, #051d3c 85%, #041730 100%);
-          z-index: 4; pointer-events: none;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -1px;
+          height: 22vh;
+          background: linear-gradient(
+            180deg,
+            rgba(5, 29, 60, 0) 0%,
+            #051D3C 85%,
+            #051D3C 100%
+          );
+          z-index: 4;
+          pointer-events: none;
         }
         .hint {
           position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
