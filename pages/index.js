@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import AboutTech from '../components/AboutTech';
 
 const HeroParallax = dynamic(() => import('../components/HeroParallax'), { ssr: false });
 
@@ -32,6 +33,7 @@ export default function Home() {
       <HeroParallax />
       <section className={utilStyles.headingMd}>
       </section>
+      <AboutTech />
     </Layout>
   );
 }
