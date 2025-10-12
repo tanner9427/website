@@ -10,7 +10,7 @@ import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { Flip } from 'gsap/dist/Flip';
 
-export default function Navbar() {
+export default function Navbar({ variant = 'auto' }) {
   const router = useRouter();
   const isHome = router.pathname === '/';
 
@@ -35,8 +35,13 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', close);
   }, [isOpen]);
 
+  // ======= NEW: Skip GSAP + portal if "sticky" variant =======
+  const stickyOnly = variant === 'sticky' || (!isHome && variant === 'auto');
+
   useEffect(() => {
+    if (stickyOnly) return;                 // <-- no floating logic for sticky
     if (!mounted || !navRef.current) return;
+
     gsap.registerPlugin(ScrollTrigger, Flip);
 
     const nav = navRef.current;
@@ -90,11 +95,65 @@ export default function Navbar() {
     });
 
     return () => st.kill();
-  }, [mounted]);
+  }, [mounted, stickyOnly]);
 
   if (!mounted) return null;
 
-  // Render the nav in a portal so it overlays the WHOLE page (hero + rest)
+  // ======= Sticky-only render (no portal, always fixed bar) =======
+  if (stickyOnly) {
+    return (
+      <div className={styles.overlay /* can be a harmless container */}>
+        <div className={styles.wrap}>
+          <nav ref={navRef} className={`${styles.navbar} ${styles.fixed}`} aria-label="Primary Navigation">
+            <div className={styles.logoRow}>
+              <Link href="/" className={styles.logoContainer} onClick={() => setIsOpen(false)}>
+                <span className={styles.name}>TANNER TRAN</span>
+              </Link>
+
+              <button
+                className={styles.hamburger}
+                onClick={() => setIsOpen((o) => !o)}
+                ref={buttonRef}
+                aria-expanded={isOpen}
+                aria-controls="primary-menu"
+                aria-label="Toggle navigation menu"
+              >
+                <div className={styles.bar}></div>
+                <div className={styles.bar}></div>
+                <div className={styles.bar}></div>
+              </button>
+            </div>
+
+            <ul id="primary-menu" ref={menuRef} className={`${styles.items} ${isOpen ? styles.show : ''}`}>
+              <li className={styles.item}>
+                {/* Not on home: use anchor to section on / */}
+                <Link href="/#myWork" className={styles.itemLink} onClick={() => setIsOpen(false)}>
+                  work
+                </Link>
+              </li>
+              <li className={styles.item}>
+                <Link href="/Tanner Tran Resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.itemLink} onClick={() => setIsOpen(false)}>
+                  resume
+                </Link>
+              </li>
+              <li className={styles.item}>
+                <Link href="/aboutme" className={styles.itemLink} onClick={() => setIsOpen(false)}>
+                  about
+                </Link>
+              </li>
+              <li className={styles.item}>
+                <a href="mailto:tanner9427@outlook.com" className={styles.itemLink} onClick={() => setIsOpen(false)}>
+                  contact
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    );
+  }
+
+  // ======= Floating portal render (home) =======
   return createPortal(
     <div ref={overlayRef} className={styles.overlay} aria-hidden={false}>
       <div className={styles.wrap}>
