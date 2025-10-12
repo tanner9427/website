@@ -37,6 +37,7 @@ export default function AboutMe() {
                         <h1>About Me</h1>
                         <p>
                             I'm Tanner, a developer and designer passionate about creating beautiful, functional applications and websites.
+                            I graduated Cal Poly SLO with a degree in Computer Science.
                             My strengths are in UI/UX design, web development, and graphic design, but I also have experience with software
                             engineering and enjoy working with technical projects. I am very passionate on blending creativity with technology
                             and bringing ideas to life.
@@ -44,7 +45,6 @@ export default function AboutMe() {
                         <p>
                             In my spare time, I love playing and listening to music. Aside from that, you will usually see me calligraphing or
                             outside on a bike or climbing.
-                            Currently based in Sacramento.
                         </p>
                     </div>
 

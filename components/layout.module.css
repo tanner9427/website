@@ -17,12 +17,12 @@
 }
 
 .headerContainer {
-  background-image: var(--bg-image);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-  top: 0;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    top: 0;
 }
 
 
@@ -100,6 +100,7 @@
 }
 
 .currentlyBar a:hover {
+    opacity: 0.7;
     color: #94EDDF;
 }
 
