@@ -30,6 +30,11 @@
     align-self: center;
 }
 
+.blurb {
+    font-weight: 500;
+    font-size: 24px;
+}
+
 /* Each tech item */
 .techItem {
     display: flex;
@@ -79,11 +84,16 @@
     opacity: 0.95;
 }
 
-.inlineLink,
-.button {
+.inlineLink {
     color: var(--primary-color, #A8C6FF);
     text-decoration: none;
-    /* transition: opacity 0.2s ease, border-color 0.2s ease; */
+}
+
+.button {
+    display: inline-flex;
+    color: var(--primary-color, #A8C6FF);
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .inlineLink:hover,

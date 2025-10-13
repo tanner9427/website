@@ -69,7 +69,7 @@ export default function AboutTech() {
                         creative, accessible, and expressive digital experiences. I enjoy blending
                         clean design with smooth motion to make interfaces feel alive.
                     </p>
-                    <p className={styles.blurb}>
+                    {/* <p className={styles.blurb}>
                         Currently, I’m a <strong>Web Developer</strong> at {" "}
                         <a
                             href="https://cedargroupak.com/"
@@ -81,7 +81,7 @@ export default function AboutTech() {
                         </a>, helping strengthen businesses and organizations while supporting projects that
                         uplift local communities and honor Indigenous cultures across Juneau and Southeast Alaska.
                         <Link href="/aboutme" className={styles.button}> Read more about me! →</Link>
-                    </p>
+                    </p> */}
 
                 </div>
 

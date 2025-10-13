@@ -34,7 +34,6 @@ export default function AboutMe() {
                 </Head>
                 <div className={styles.aboutContainer}>
                     <div className={styles.description}>
-                        <h1>About Me</h1>
                         <p>
                             I'm Tanner, a developer and designer passionate about creating beautiful, functional applications and websites.
                             I graduated Cal Poly SLO with a degree in Computer Science.
@@ -43,8 +42,8 @@ export default function AboutMe() {
                             and bringing ideas to life.
                         </p>
                         <p>
-                            In my spare time, I love playing and listening to music. Aside from that, you will usually see me calligraphing or
-                            outside on a bike or climbing.
+                            In my spare time, I love playing and listening to music along with calligraphing. Outside, you will see me trail running,
+                            on a road bike, hiking, or climbing rocks!
                         </p>
                     </div>
 

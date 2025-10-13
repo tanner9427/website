@@ -145,7 +145,7 @@ export default function Layout({ children, home, showHeader = false, showNavbar 
     return (
         <div className={styles.outerContainer}>
             <Head>
-                <link rel="icon" href="/images/favicon.png" />
+                <link rel="icon" type="image/png" href="/favicon.png" />
                 <meta name="Tanner Tran Website" content="Tanner Tran's Personal Website" />
                 <meta
                     property="og:image"
@@ -153,6 +153,10 @@ export default function Layout({ children, home, showHeader = false, showNavbar 
                 />
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
+                <meta
+                    name="description"
+                    content="Tanner Tran is a UI/UX-focused web and front-end developer that graduated from Cal Poly, SLO. His work focuses on thoughtful, accessible user design and experiences"
+                />
             </Head>
             {/* {showNavbar && <Navbar />} */}
             <div className={styles.innerContainer}>
