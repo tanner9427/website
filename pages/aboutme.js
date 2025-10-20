@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import styles from './aboutme.module.css';
 import Navbar from '../components/navbar';
 import Slider from 'react-slick';
+import Image from 'next/image';
 
 export default function AboutMe() {
     const settings = {
@@ -46,8 +47,14 @@ export default function AboutMe() {
                             on a road bike, hiking, or climbing rocks!
                         </p>
                     </div>
-
-                    <div className={styles.carouselWrapper}>
+                    <Image
+                        src="/images/portrait.jpg"
+                        alt="Tanner Tran portrait"
+                        width={500}
+                        height={700}
+                        className={styles.portrait}
+                    />
+                    {/* <div className={styles.carouselWrapper}>
                         <Slider {...settings}>
                             <div className={styles.slide}>
                                 <img src="/images/halfdome.jpeg" alt="Half Dome" />
@@ -62,7 +69,7 @@ export default function AboutMe() {
                                 <p className={styles.caption}>Bouldering in Ojai</p>
                             </div>
                         </Slider>
-                    </div>
+                    </div> */}
                 </div>
             </Layout>
         </>

@@ -4,9 +4,12 @@ import utilStyles from '../styles/utils.module.css';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import AboutTech from '../components/AboutTech';
 
 const HeroParallax = dynamic(() => import('../components/HeroParallax'), { ssr: false });
+const AboutTech = dynamic(() => import("../components/AboutTech"), {
+  ssr: false,
+  loading: () => null, // optional placeholder
+});
 
 export default function Home() {
   const router = useRouter();

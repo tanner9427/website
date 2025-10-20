@@ -20,6 +20,14 @@
     line-height: 1.6;
 }
 
+.portrait {
+    width: min(42vw, 520px);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+}
+
 .carouselWrapper {
     max-width: 1000px;
     margin: 0 auto;
@@ -85,5 +93,11 @@
 
     .slick-arrow {
         display: none !important;
+    }
+}
+
+@media (max-width: 960px) {
+    .portrait {
+        width: 100%;
     }
 }
